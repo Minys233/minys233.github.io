@@ -4,13 +4,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US">
     <title type="text">Minys&#39;s blog</title>
     <subtitle type="html">siteDescription</subtitle>
-    <updated>2020-05-20T13:08:05&#43;08:00</updated>
-    <id>https://blog.minys.online/</id>
-    <link rel="alternate" type="text/html" href="https://blog.minys.online/" />
-    <link rel="self" type="application/atom&#43;xml" href="https://blog.minys.online/atom.xml" />
+    <updated>2020-05-20T13:13:27&#43;08:00</updated>
+    <id>https://minys233.github.io/</id>
+    <link rel="alternate" type="text/html" href="https://minys233.github.io/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://minys233.github.io/atom.xml" />
     <author>
             <name>Minys</name>
-            <uri>https://blog.minys.online/</uri>
+            <uri>https://minys233.github.io/</uri>
             
                 <email>minys@foxmail.com</email>
             </author>
@@ -18,13 +18,13 @@
     <generator uri="https://gohugo.io/" version="0.61.0">Hugo</generator>
         <entry>
             <title type="text">功能测试</title>
-            <link rel="alternate" type="text/html" href="https://blog.minys.online/posts/test-my-site/" />
-            <id>https://blog.minys.online/posts/test-my-site/</id>
+            <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/test-my-site/" />
+            <id>https://minys233.github.io/posts/test-my-site/</id>
             <updated>2020-05-20T02:11:22&#43;08:00</updated>
             <published>2020-05-19T18:49:55&#43;00:00</published>
             <author>
                     <name>Minys</name>
-                    <uri>https://blog.minys.online/</uri>
+                    <uri>https://minys233.github.io/</uri>
                     <email>minys@foxmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">这是一个一级标题 这是一个二级标题 数学公式 简单公式 $$ a^2 + b^2 = c^2$$
@@ -87,7 +87,7 @@ $$&lt;/p&gt;
                             
                             
                             
-                                <category scheme="https://blog.minys.online/tags/%E6%B5%8B%E8%AF%95/" term="测试" label="测试" />
+                                <category scheme="https://minys233.github.io/tags/%E6%B5%8B%E8%AF%95/" term="测试" label="测试" />
                             
                         
                     

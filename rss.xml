@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Minys&#39;s blog</title>
-        <link>https://blog.minys.online/</link>
+        <link>https://minys233.github.io/</link>
         <description>siteDescription</description>
         <generator>Hugo 0.61.0 https://gohugo.io/</generator>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Wed, 20 May 2020 13:08:05 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 20 May 2020 13:13:27 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://blog.minys.online/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://minys233.github.io/rss.xml" />
         
         
             <item>
                 <title>功能测试</title>
-                <link>https://blog.minys.online/posts/test-my-site/</link>
-                <guid isPermaLink="true">https://blog.minys.online/posts/test-my-site/</guid>
+                <link>https://minys233.github.io/posts/test-my-site/</link>
+                <guid isPermaLink="true">https://minys233.github.io/posts/test-my-site/</guid>
                 <pubDate>Tue, 19 May 2020 18:49:55 &#43;0000</pubDate>
                 
                     <author>minys@foxmail.com (Minys)</author>
@@ -94,7 +94,7 @@ $$&lt;/p&gt;
                                 
                                 
                                 
-                                    <category domain="https://blog.minys.online/tags/%E6%B5%8B%E8%AF%95/">测试</category>
+                                    <category domain="https://minys233.github.io/tags/%E6%B5%8B%E8%AF%95/">测试</category>
                                 
                             
                         
