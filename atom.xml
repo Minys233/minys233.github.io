@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US">
     <title type="text">Minys&#39;s blog</title>
     <subtitle type="html">siteDescription</subtitle>
-    <updated>2020-05-20T12:33:29&#43;08:00</updated>
+    <updated>2020-05-20T13:08:05&#43;08:00</updated>
     <id>https://blog.minys.online/</id>
     <link rel="alternate" type="text/html" href="https://blog.minys.online/" />
     <link rel="self" type="application/atom&#43;xml" href="https://blog.minys.online/atom.xml" />
