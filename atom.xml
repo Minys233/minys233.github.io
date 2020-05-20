@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US">
     <title type="text">Minys&#39;s blog</title>
     <subtitle type="html">siteDescription</subtitle>
-    <updated>2020-05-20T13:15:03&#43;08:00</updated>
+    <updated>2020-05-20T13:39:23&#43;08:00</updated>
     <id>https://minys233.github.io/</id>
     <link rel="alternate" type="text/html" href="https://minys233.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://minys233.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">功能测试</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/test-my-site/" />
             <id>https://minys233.github.io/posts/test-my-site/</id>
-            <updated>2020-05-20T02:11:22&#43;08:00</updated>
+            <updated>2020-05-20T13:38:20&#43;08:00</updated>
             <published>2020-05-19T18:49:55&#43;00:00</published>
             <author>
                     <name>Minys</name>
@@ -80,6 +80,14 @@ $$&lt;/p&gt;
             
             
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://minys233.github.io/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/" term="随便写写" label="随便写写" />
+                            
+                        
                     
                 
                     
