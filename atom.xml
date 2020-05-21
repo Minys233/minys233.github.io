@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US">
     <title type="text">Minys&#39;s blog</title>
     <subtitle type="html">siteDescription</subtitle>
-    <updated>2020-05-22T01:02:43&#43;08:00</updated>
+    <updated>2020-05-22T03:08:05&#43;08:00</updated>
     <id>https://minys233.github.io/</id>
     <link rel="alternate" type="text/html" href="https://minys233.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://minys233.github.io/atom.xml" />
@@ -20,11 +20,11 @@
             <title type="text">How Powerful Are Graph Neural Networks?</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/how-powerful-are-graph-neural-networks/" />
             <id>https://minys233.github.io/posts/how-powerful-are-graph-neural-networks/</id>
-            <updated>2020-05-22T01:02:19&#43;08:00</updated>
+            <updated>2020-05-22T02:30:54&#43;08:00</updated>
             <published>2020-05-20T20:59:03&#43;08:00</published>
             <author>
                     <name>Minys</name>
-                    <uri>https://minys233.github.io/</uri>
+                    <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">读后总结, 刊于ICLR 2019</summary>
@@ -32,8 +32,7 @@
                 <content type="html">&lt;h2 id=&#34;preliminary&#34;&gt;Preliminary&lt;/h2&gt;
 &lt;h3 id=&#34;the-weisfeiler-lehman-isomorphism-test&#34;&gt;The Weisfeiler-Lehman Isomorphism Test&lt;/h3&gt;
 &lt;p&gt;For a easy-to understand explanation, please refer to &lt;a href=&#34;https://davidbieber.com/post/2019-05-10-weisfeiler-lehman-isomorphism-test/&#34;&gt;this link&lt;/a&gt;. Here, I simply summarize it briefly.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-21-112619.png&#34; alt=&#34;Two isomorphic graphs&#34;&gt;
-&lt;em&gt;Graph 1 and Graph 2 are isomorphic. The correspondance between nodes is illustrated by the node colors and numbers.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-21-112619.png&#34; alt=&#34;Two isomorphic graphs&#34; title=&#34;Graph 1 and Graph 2 are isomorphic. The correspondance between nodes is illustrated by the node colors and numbers.&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;In general, determining whether two graphs are isomorphic when the correspondance is not provided is a challenging problem; precisely how hard this problem is remains an open question in computer science. It isn&#39;t known whether there is a polynomial time algorithm for determining whether graphs are isomorphic, and it also isn&#39;t known whether the problem is NP-complete. The graph isomorphism problem may even be an example of an &lt;a href=&#34;https://en.wikipedia.org/wiki/NP-intermediate&#34;&gt;NP-intermediate&lt;/a&gt; problem, but this would only be possible if $P\ne NP$.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;From link above&lt;/em&gt;&lt;/p&gt;
@@ -43,23 +42,23 @@
 &lt;p&gt;最为常见的GNN范式可以如此描述.对于图 $G=(V,E)$ , $X_v$ 表示其节点 $v\in V$ 的特征向量(feature vector)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. 图网络的流程可以简单概括如下：
 $$
 \begin{aligned}
-a_v^{(k)}&amp;amp;=\text{AGGREGATE}^{(k)}\left( \left{\left. h_u^{(k-1)}\right|u\in \mathcal{N}(v) \right} \right), \\&lt;br&gt;
+a_v^{(k)}&amp;amp;=\text{AGGREGATE}^{(k)}\left( \left\{\left. h_u^{(k-1)}\right|u\in \mathcal{N}(v) \right\} \right), \\&lt;br&gt;
 h_v^{(k)} &amp;amp;= \text{COMGINE}^{(k)}\left( h_v^{(k-1)}, a_v^{(k)} \right),\\&lt;br&gt;
-h_G &amp;amp;= \text{READOUT}\left( \left{ \left. h_v^{(K)} \right| v\in G \right} \right)
+h_G &amp;amp;= \text{READOUT}\left( \left\{ \left. h_v^{(K)} \right| v\in G \right\} \right)
 \end{aligned}
 $$
 其中, $h_v^{(k)}$ 表示节点 $v$ 在第 $k$ 层/循环时的特征向量; $h_v^{(k)}$ 的初始值为 $X_v$ ; $\mathcal{N}(v)$ 表示节点 $v$ 的邻居节点. 其中三个大写字母表示的函数是区别于不同GNN之间的重要因素. 大概汇总如下:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;GraphSAGE (Hamilton et al., 2017a)
 &lt;ul&gt;
-&lt;li&gt;$a_v^{(k)}=\text{MAX}\left( \left{\left. \text{ReLU}\left(W\cdot h_u^{(k-1)}\right)  \right|u\in \mathcal{N}(v) \right} \right)$&lt;/li&gt;
+&lt;li&gt;$a_v^{(k)}=\text{MAX}\left( \left\{\left. \text{ReLU}\left(W\cdot h_u^{(k-1)}\right)  \right|u\in \mathcal{N}(v) \right\} \right)$&lt;/li&gt;
 &lt;li&gt;$h_v^{(k)} = W\cdot \left[ h_V^{(k-1)}, a_v^{(k)} \right]$&lt;/li&gt;
 &lt;li&gt;$\text{MAX}$ 表示MaxPooling&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;GCN (Kipf &amp;amp; Welling, 2017)
 &lt;ul&gt;
-&lt;li&gt;$h_v^{(k)}=\text{ReLU}\left(W\cdot \text{MEAN}\left{ h_u^{(k-1)}, \forall u\in \mathcal{N}(v)\cup {v}  \right}\right)$&lt;/li&gt;
+&lt;li&gt;$h_v^{(k)}=\text{ReLU}\left(W\cdot \text{MEAN}\left\{ h_u^{(k-1)}, \forall u\in \mathcal{N}(v)\cup {v}  \right\}\right)$&lt;/li&gt;
 &lt;li&gt;两个函数合二为一&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -75,31 +74,29 @@ $$
 &lt;p&gt;这里阐述一个大概的思路. 为了论证GNN的表示能力, 考察何种条件下GNN能将两个节点映射到嵌入空间中相同的位置. 理想情况下, 最具表达能力的GNN将两个节点映射到嵌入空间中相同的位置&lt;strong&gt;当且仅当&lt;/strong&gt;两个节点具有相同的子树结构 (aggregate N 次形成的树). 这表示GNN的 $\text{AGGREGATE}$ 函数必须是单射的. 而GNN这种区分能力的上限则是WL test. 作者证明,只有当$\text{AGGREGATE}$ , $\text{COMBINE}$ 以及 $\text{READOUT}$ 都是单射的时候, GNN将在描述节点的特征上达到WL test的性能.&lt;/p&gt;
 &lt;p&gt;注: 文中这里提出了很多引理, 针对如何设计一个单射的multiset function. 这些是GIN设计及有效的证据.&lt;/p&gt;
 &lt;h2 id=&#34;graph-isomorphism-network-gin&#34;&gt;Graph Isomorphism Network (GIN)&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-21-155525.png&#34; alt=&#34;一些引理最终得到的命题&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-21-155525.png&#34; alt=&#34;一些引理最终得到的命题&#34; title=&#34;由一些引理得到的命题&#34;&gt;&lt;/p&gt;
 &lt;p&gt;这一命题构造了一系列符合要求的单设函数. 如果使用MLP学习其中的映射, 那么就得到了GIN的节点表示更新函数就可以写作为下式. 其中MLP可对前一次和下一次的 $\phi f$ 函数同时建模. 至此, 作者表明他们设计出了一个理论上达到表示能力上界的图神经网络.
 $$
 h_v^{(k)}=\text{MLP}^{(k)}\left(\left( 1+\epsilon^{(k)} \right)\cdot h_v^{(k-1)}+\sum_{u\in\mathcal{N}(v)}h_u^{(k-1)}\right)
 $$
 最后, 还差一个 $\text{READOUT}$ 函数. 作者提出, 在节点对应的遍历树逐渐趋近整个图的时候, 图中的特征将会有更好的判别性能. 但迭代轮数较小时候的特征却可以拥有更好的泛化性能&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. 因此作者表示为了能考虑到图中所有结构信息, 我们应当使用所有迭代过程中的特征. 作者通过一个与 Jumping Knowledge Network类似的架构实现了这样的操作:
 $$
-h_G=\text{CONCAT} \left( \text{READOUT}\left.\left.\left(\left{h_v^{(k)}\right|v \in G\right} \right) \right| k=0,1,\dots,K \right)
+h_G=\text{CONCAT} \left( \text{READOUT}\left.\left.\left(\left\{h_v^{(k)}\right|v \in G\right\} \right) \right| k=0,1,\dots,K \right)
 $$
 根据上面的命题, 如果令 $\text{READOUT}$ 为求和函数, 那么它也将符合单射的条件. 作者在4个生信数据集+5个社交网络数据集上进行了测试, 结果自然是几乎全部怒砍第一.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-21-163130.png&#34; alt=&#34;GIN不同数据集上的测评结果&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-21-163130.png&#34; alt=&#34;GIN不同数据集上的测评结果&#34; title=&#34;GIN不同数据集上的测评结果&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;gnn&#34;&gt;关于其他的GNN&lt;/h2&gt;
 &lt;p&gt;其他的GNN虽然没有GIN这么强大,但是同样会捕捉一些图上有趣的性质. 作者针对GCN和GraphSAGE中不满足单设条件的①1层感知器, ②均值或max-pooling而非求和的 $\text{AGGREGATE}$ 函数做了消融实验. 它们都在一些图结构上无法分辨.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-21-164916.png&#34; alt=&#34;表达能力排序&#34;&gt;
-&lt;em&gt;不同的 $\text{AGGREGATE}$ 函数的表示能力排序. Input表示将要输入的一堆目标节点的邻居; 右边排序说明了SUM捕捉到multiset中所有元素的特征; MEAN捕捉到了节点大致的分布; MAX忽视了multiset, 将其退化为简单地集合 (SET). 不同颜色的节点代表不同的特征值.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-21-164916.png&#34; alt=&#34;表达能力排序&#34; title=&#34;不同的 $\text{AGGREGATE}$ 函数的表示能力排序. Input表示将要输入的一堆目标节点的邻居; 右边排序说明了SUM捕捉到multiset中所有元素的特征; MEAN捕捉到了节点大致的分布; MAX忽视了multiset, 将其退化为简单地集合 (SET). 不同颜色的节点代表不同的特征值.&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;1&#34;&gt;1层感知器&lt;/h3&gt;
 &lt;p&gt;文章证明了1层感知器 (线性组合+激活函数) 并不能对某些网络结构进行分辨. 即文中引理7:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Lemma 7.&lt;/strong&gt; &lt;em&gt;There exist finite multisets&lt;/em&gt; $X_1 \ne X_2$ &lt;em&gt;so that for any linear mapping&lt;/em&gt; $W$, $\sum_{􏰄x\in X_1} \text{ReLU}(Wx)=\sum_{􏰄x\in X_2} \text{ReLU}(Wx)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lemma 7.&lt;/strong&gt; &lt;em&gt;There exist finite multisets&lt;/em&gt; $X_1 \ne X_2$ &lt;em&gt;so that for any linear mapping&lt;/em&gt; $W$, $\sum_{x\in X_1} \text{ReLU}(Wx)=\sum_{x\in X_2} \text{ReLU}(Wx)$.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;证明过程主要思路是, 1层感知器和线性映射区别很小, GNN会退化到每一层仅仅将邻居节点求和. 另外, 众所周知, 1层感知器并不能对任意的函数进行近似.&lt;/p&gt;
 &lt;h3 id=&#34;meanmax-pooling&#34;&gt;Mean和Max-pooling&lt;/h3&gt;
 &lt;p&gt;这两个函数虽然都是组合不变的, 但是他们并非单射的. 根据之前的证明, 他们并不能区分某些图结构. 对于Mean函数,很容易能看出来, 它刻画的是周围邻居的均值, 或者可以理解为分布情况. 而对Max-pooling, 它则将原本是Multiset的邻居特征集合退化为一个简单集合, 并使用唯一元素代表所有邻居. 这些结论都有形式化证明, 这里不再赘述.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-21-165229.png&#34; alt=&#34;&#34;&gt;
-&lt;em&gt;使得不同 $\text{AGGREGATE}$ 函数输出相同的图结构. 其中不同颜色代表不同的特征值. 简单计算就可以看出原因.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-21-165229.png&#34; alt=&#34;Mean和Max-pooling无法分辨的结构&#34; title=&#34;使得不同 $\text{AGGREGATE}$ 函数输出相同的图结构. 其中不同颜色代表不同的特征值. 简单计算就可以看出原因.&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;heading-2&#34;&gt;结果与总结&lt;/h2&gt;
 &lt;p&gt;这篇论文亮点就在通过WL test分析并设计的GNN确实在下游任务中比原来几种GNN好得多. 这篇文章代码也出奇简单. 有空一定要好好看看, 留个坑.&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
@@ -157,11 +154,14 @@ $$
             <published>2020-05-20T15:30:54&#43;08:00</published>
             <author>
                     <name>Minys</name>
-                    <uri>https://minys233.github.io/</uri>
+                    <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">The process is seeded with $N$ vectors &amp;hellip;
- From Constrained Graph Variational Autoencoders for Molecule Design</summary>
+ From Constrained Graph Variational Autoencoders for Molecule Design
+ GNNs follow a neighborhood aggregation scheme, where the representation vector of a node is computed by recursively aggregating and trans- forming representation vectors of its neighboring nodes.
+  Recently, there has been a surge of interest in Graph Neural Network (GNN) approaches for representation learning of graphs.
+ From How Powerful Are Graph Neural Networks?</summary>
             
                 <content type="html">&lt;blockquote&gt;
 &lt;p&gt;The process is &lt;strong&gt;seeded with&lt;/strong&gt; $N$ vectors &amp;hellip;&lt;/p&gt;
@@ -212,7 +212,7 @@ $$
             <published>2020-05-20T15:26:23&#43;08:00</published>
             <author>
                     <name>Minys</name>
-                    <uri>https://minys233.github.io/</uri>
+                    <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">读后总结，刊于ICLR 2020</summary>
@@ -317,10 +317,18 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
             <published>2020-05-19T18:49:55&#43;00:00</published>
             <author>
                     <name>Minys</name>
-                    <uri>https://minys233.github.io/</uri>
+                    <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">这是一个一级标题 这是一个二级标题 数学公式 简单公式$A+B=C$这是行内公式 $$ a^2 + b^2 = c^2$$</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">这是一个一级标题 这是一个二级标题 数学公式 简单公式$A+B=C$这是行内公式 $$ a^2 + b^2 = c^2$$
+$$x=\frac{-b\pm\sqrt{4ac}}{2a}$$ 复杂公式 $$ \begin{aligned} \mathcal{L} ( \mu ,\sigma^2 ) &amp;amp;= \prod_{i = 1}^n \left\lbrace \frac{1}{\sqrt{2 \pi} \sigma } \text{exp} \left\lbrace - \frac{( x_i - \mu)^2}{2 \sigma^2}\right\rbrace \right\rbrace ,\\
+&amp;amp;= (2 \pi \sigma^2)^{- \frac{n}{2}} \text{exp} \left\lbrace - \frac{1}{2 \sigma^2} \sum_{i = 1}^{n} (x_i - \mu)^2 \right\rbrace . \end{aligned} $$
+公式作为TOC项目 $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ 一元二次方程解的公式$x= \frac{-b\pm\sqrt{4ac}}{2a}$
+化学式$\ce{H3O+}$ $\ce{[AgCl2]-}$
+$\ce{NaOH(aq,$\infty$)}$
+$\ce{Hg^2+ -&amp;gt;[I-] $\underset{\mathrm{red}}{\ce{HgI2}}$ -&amp;gt;[I-] $\underset{\mathrm{red}}{\ce{[Hg^{II}I4]^2-}}$}$
+Emoji 🌶💉🔟🐮🍺
+代码块 1 2 3 4 5  class Foo(object): def __init__(self, bar): self.foo = bar def print(): print(f&amp;#34;this is {self.foo}&amp;#34;)   </summary>
             
                 <content type="html">&lt;h1 id=&#34;heading&#34;&gt;这是一个一级标题&lt;/h1&gt;
 &lt;h2 id=&#34;heading-1&#34;&gt;这是一个二级标题&lt;/h2&gt;
