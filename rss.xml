@@ -23,10 +23,163 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 21 May 2020 19:07:45 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 21 May 2020 19:11:00 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://minys233.github.io/rss.xml" />
         
+        
+            <item>
+                <title>学术英语写作</title>
+                <link>https://minys233.github.io/posts/%E5%AD%A6%E6%9C%AF%E8%8B%B1%E8%AF%AD%E5%86%99%E4%BD%9C/</link>
+                <guid isPermaLink="true">https://minys233.github.io/posts/%E5%AD%A6%E6%9C%AF%E8%8B%B1%E8%AF%AD%E5%86%99%E4%BD%9C/</guid>
+                <pubDate>Wed, 20 May 2020 15:30:54 &#43;0800</pubDate>
+                
+                    <author>minys@foxmail.com (Minys)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;blockquote&gt;
+&lt;p&gt;The process is &lt;strong&gt;seeded with&lt;/strong&gt; $N$ vectors &amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;From &lt;em&gt;Constrained Graph Variational Autoencoders for Molecule Design&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GNNs &lt;strong&gt;follow&lt;/strong&gt; a neighborhood aggregation &lt;strong&gt;scheme&lt;/strong&gt;, where the representation vector of a node is computed by recursively aggregating and trans- forming representation vectors of its neighboring nodes.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Recently, there has been &lt;strong&gt;a surge of interest in&lt;/strong&gt; Graph Neural Network (GNN) approaches for representation learning of graphs.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;From &lt;em&gt;How Powerful Are Graph Neural Networks?&lt;/em&gt;&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://minys233.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">文献阅读</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://minys233.github.io/tags/academic-writing/">Academic Writing</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Strategies for Pre Training Graph Neural Networks</title>
+                <link>https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/</link>
+                <guid isPermaLink="true">https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/</guid>
+                <pubDate>Wed, 20 May 2020 15:26:23 &#43;0800</pubDate>
+                
+                    <author>minys@foxmail.com (Minys)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;h2 id=&#34;heading&#34;&gt;问题提出&lt;/h2&gt;
+&lt;p&gt;文章首先提出迁移学习在CV与NLP中已经应用广泛了，但在图数据上相应的预训练的工作还比较少。预训练主要解决目前图数据集的两个问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;task-specific labeled data can be extremely scarce.&lt;/li&gt;
+&lt;li&gt;Graph data from real-world often contain out-of-distribution samples.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第一个问题很好理解，在化学生物领域中，图数据（eg: molecule, protein, etc.）对应的标签的获取过程需要做实验，是资源密集且时间密集的。第二个问题个人理解指的是数据的整体分布和条件分布的区别。例如，所有已发现的分子数据库可看作是整体分布。而对特定的任务如MoleculeNet中的BBBP数据集&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，数据的分子则是在某些隐含条件下的，如具有一定的水溶性和脂溶性、常温下不太可能是气体、不太可能含有特定有毒的重金属元素/官能团。&lt;/p&gt;
+&lt;p&gt;因此，不少研究都发现，简单地增加有标数据的量并不能一定让预训练或迁移学习进行得更好。相反，预训练需要领域知识来合理地选择和特定下游任务有关的数据。相反，如果下游任务和预训练的任务差别太大，则有可能导致“负迁移”（negative transfer）的问题。&lt;/p&gt;
+&lt;h2 id=&#34;heading-1&#34;&gt;解决方案&lt;/h2&gt;
+&lt;h3 id=&#34;heading-2&#34;&gt;简述&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-170447%402x.png&#34; alt=&#34;思路简述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如上图，本文提出使用节点水平+图水平的预训练使得图网络既能学到节点与边层面上的特征（局部特征），也能捕捉到图级别的特征（全局特征）。作者为预训练设计了特定的任务，如上图右边，以此来对特定的图中信息进行建模。本文通过对比使用了比较新GIN模型作为预训练的图网络。&lt;/p&gt;
+&lt;h3 id=&#34;heading-3&#34;&gt;节点的预训练&lt;/h3&gt;
+&lt;p&gt;承上，节点的预训练作者提出了两种方案，分别针对邻居结构信息和自身节点信息。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-170517%402x.png&#34; alt=&#34;节点嵌入&#34;&gt;&lt;/p&gt;
+&lt;p&gt;**Context prediction.**对每一个节点 $v$ ， $K$-hop 邻居指该节点出发最多 $K$-hop 以内的所有节点和边。也即是一个常见的 $K$ 层GNN能够搜集信息的范围，对应节点的表示向量 $h_v^{(K)}$ 则取决于它的 $K$-hop 邻居。Context graph 表示一些节点 $v$ 的邻居结构。它由两个参数 $r_1, r_2$ 控制。对于节点 $v$，表示由所有与 $v$ 距离 $r_1$-hop 和 $r_2$-hop 之间的节点和边所构成的子图，可近似看做一个环形区域。令 $r_1 &amp;lt; K$，并将 $K$-hop 邻居和Context graph的交集被称为Context anchor nodes。这一任务如上图(a)所示，第一步先使用一个辅助GNN&#39;来得到Context graph中的节点向量表示，并对Context anchor nodes的表示求平均，得到绿色的向量，对于图 $G$ 中的节点 $v$ ，这样得到的向量为 $c_v^G$。第二步，用主GNN在 $K$-hop 邻居组成的子图上得到 $v$ 的表示 $h_v^{(K)}$。预训练的目标即为：
+$$
+\sigma(h_v^{(K)}\cdot c_{v&amp;rsquo;}^G) \approx 1 \;\;\text{if $v$ and $v&#39;$ are same node}
+$$
+$\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用negative sampling，控制 $v&#39;=v$ 或 $G&#39;=G$，让正负样本比例为1。这实际上是要学到图的拓扑结构。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Attribute masking.&lt;/strong&gt; 随机mask掉分子图中的一些节点和边的属性，使用GNN预测。这个任务原理没有这么复杂，不再赘述。&lt;/p&gt;
+&lt;h3 id=&#34;heading-4&#34;&gt;图的预训练&lt;/h3&gt;
+&lt;p&gt;图 $G$ 的向量表示 $h_G$ 下游任务进行微调训练时候直接使用的特征，我们应当让这类特征包含相关的领域知识。作者提出，使用图级别多任务有监督预训练（graph-level multi-task supervised pre-training）来同时预测同一个图的多个标签。但是，如果只是单纯的这样训练，如果预训练的任务与下游任务相关性不强或，则可能出现负迁移的现象。因此，作者认为图的预训练仅仅提供了图层面上的监督，即使节点表示学的很好，但图表示很可能在预训练阶段由于各种原因是没那么有意义的。因此，作者表示要缓解这个问题，就要先进行节点预训练，再进行图的预训练&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。另外，作者还说可以用图网络预测图之间的相似性来进行图的预训练。然而他说这个复杂度太高，他不做。&lt;/p&gt;
+&lt;h2 id=&#34;heading-5&#34;&gt;实验和结果&lt;/h2&gt;
+&lt;p&gt;实验分别在化学任务和生物学任务上进行预训练效果测试。预训练数据来源是ZINC15，只在其中选了2百万个分子&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。详细数据和方法略去，仅介绍结果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-183500%402x.png&#34; alt=&#34;所有下游任务和与训练策略的比较&#34;&gt;&lt;/p&gt;
+&lt;p&gt;上图是GIN使用不同的与训练策略在下游任务（化学）中的表现，测评指标是ROC-AUC（%）。加粗字体表示最好的几个（best and comparable），灰框的表示出现了负迁移，结果比不预训练的网络还差。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-183515%402x.png&#34; alt=&#34;不同模型是否预训练的结果变化&#34;&gt;&lt;/p&gt;
+&lt;p&gt;不同图网络模型在化学和生物两大类下游任务中的表现，比较预训练与否所带来的ROC-AUC（%）的变化，可以轻松看出GIN是最适合预训练的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-184420%402x.png&#34; alt=&#34;使用GIN与不同与训练策略进行蛋白质功能预测&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-184432%402x.png&#34; alt=&#34;不同与训练策略的训练集和验证集ROC-AUC变化情况&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;印证了越复杂的模型就越能更好地利用预训练，相反，越有限的模型就越不能受益于预训练。&lt;/li&gt;
+&lt;li&gt;仅仅进行了图级别的预训练是不够的，将导致较多负迁移现象（2/8）。&lt;/li&gt;
+&lt;li&gt;仅仅进行了节点级别的预训练也是不够的，也会导致负迁移现象（1/8）。&lt;/li&gt;
+&lt;li&gt;结合节点级别和图级别的预训练将能达到最优的下游任务表现，同时消除了负迁移。&lt;/li&gt;
+&lt;li&gt;作者声称他的方法做到了目前最好&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;。&lt;/li&gt;
+&lt;li&gt;与训练模型在下游任务训练时能更快收敛（显然）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;这个数据集是测量一些化合物是否能突破人体血脑屏障的。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;这不是废话吗😓，反过来的话节点的预训练不就没用了。感觉这里把问题没讲清楚，实际上文中似乎就是把能获取到的数据都拿来预训练。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;我个人也发现无标签分子的预训练一两百万就差不多很足够了，再多就没有意义了。 &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;存疑，这几个数据集合同样是scaffold划分，都没有达到MoleculeNet的给出的结果，不知是如何state-of-the-art的。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://minys233.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">文献阅读</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://minys233.github.io/tags/graph-neural-network-gnn/">Graph Neural Network (GNN)</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://minys233.github.io/tags/machine-learning/">Machine Learning</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>功能测试</title>
