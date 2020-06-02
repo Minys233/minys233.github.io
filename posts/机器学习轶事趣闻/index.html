@@ -41,7 +41,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>Strategies for Pre Training Graph Neural Networks | Minys&#39;s blog</title>
+    <title>机器学习轶事趣闻 | Minys&#39;s blog</title>
 
     <link rel="stylesheet" href="/css/meme.min.a9fa51c59fdaa703d55559457002025864030591cbe885621d07c0d04c88b753.css" integrity="sha256-qfpRxZ/apwPVVVlFcAICWGQDBZHL6IViHQfA0EyIt1M=" />
 
@@ -50,7 +50,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel&#43;Decorative:wght@700&amp;family=Comfortaa&amp;family=EB&#43;Garamond:ital,wght@0,400;0,700;1,400;1,700&amp;family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Liu&#43;Jian&#43;Mao&#43;Cao&amp;family=Ma&#43;Shan&#43;Zheng&amp;family=Noto&#43;Serif&#43;SC:wght@400;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel&#43;Decorative:wght@700&amp;family=Comfortaa&amp;family=EB&#43;Garamond:ital,wght@0,400;0,700;1,400;1,700&amp;family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Liu&#43;Jian&#43;Mao&#43;Cao&amp;family=Ma&#43;Shan&#43;Zheng&amp;family=Noto&#43;Serif&#43;SC:wght@400;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
 
-    <meta name="author" content="Minys" /><meta name="description" content="读后总结，刊于ICLR 2020" />
+    <meta name="author" content="Minys" /><meta name="description" content="记录一些有意思且有意义的机器学习领域的奇闻异事, 或许能为我平白无奇的研究找些乐子." />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -69,21 +69,21 @@
     
 
     
-    <link rel="canonical" href="https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/" />
+    <link rel="canonical" href="https://minys233.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BD%B6%E4%BA%8B%E8%B6%A3%E9%97%BB/" />
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "datePublished": "2020-05-20T15:26:23+08:00",
-        "dateModified": "2020-05-22T12:54:09+08:00",
-        "url": "https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/",
-        "headline": "Strategies for Pre Training Graph Neural Networks",
-        "description": "读后总结，刊于ICLR 2020",
+        "datePublished": "2020-06-01T21:18:25+08:00",
+        "dateModified": "2020-06-01T22:06:55+08:00",
+        "url": "https://minys233.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BD%B6%E4%BA%8B%E8%B6%A3%E9%97%BB/",
+        "headline": "机器学习轶事趣闻",
+        "description": "记录一些有意思且有意义的机器学习领域的奇闻异事, 或许能为我平白无奇的研究找些乐子.",
         "inLanguage" : "en_US",
         "articleSection": "posts",
-        "wordCount":  128 ,
-        "image": ["https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-170447%402x.png","https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-170517%402x.png","https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-183500%402x.png","https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-183515%402x.png","https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-184420%402x.png","https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-184432%402x.png"],
+        "wordCount":  164 ,
+        "image": ["https://people.eecs.berkeley.edu/~efros/img/malik_gelato.jpg"],
         "author": {
             "@type": "Person",
             "description": "Record my ordinary life",
@@ -120,14 +120,14 @@
 
 
 
-<meta property="og:title" content="Strategies for Pre Training Graph Neural Networks" />
-<meta property="og:description" content="读后总结，刊于ICLR 2020" />
-<meta property="og:url" content="https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/" />
+<meta property="og:title" content="机器学习轶事趣闻" />
+<meta property="og:description" content="记录一些有意思且有意义的机器学习领域的奇闻异事, 或许能为我平白无奇的研究找些乐子." />
+<meta property="og:url" content="https://minys233.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BD%B6%E4%BA%8B%E8%B6%A3%E9%97%BB/" />
 <meta property="og:site_name" content="Minys&#39;s blog" />
-<meta property="og:locale" content="en_US" /><meta property="og:image" content="https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-170447%402x.png" />
+<meta property="og:locale" content="en_US" /><meta property="og:image" content="https://people.eecs.berkeley.edu/~efros/img/malik_gelato.jpg" />
 <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-05-20T15:26:23&#43;08:00" />
-    <meta property="article:modified_time" content="2020-05-22T12:54:09&#43;08:00" />
+    <meta property="article:published_time" content="2020-06-01T21:18:25&#43;08:00" />
+    <meta property="article:modified_time" content="2020-06-01T22:06:55&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -225,7 +225,7 @@
 
         <article class="content post" data-small-caps="true" data-align="default" data-type="posts" data-toc-num="true">
 
-            <h1 class="post-title">Strategies for Pre Training Graph Neural Networks</h1>
+            <h1 class="post-title">机器学习轶事趣闻</h1>
 
             
 
@@ -239,11 +239,11 @@
 <div class="post-meta">
     
         
-        <time datetime="2020-05-20T15:26:23&#43;08:00" class="post-meta-item published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2020.5.20</time>
+        <time datetime="2020-06-01T21:18:25&#43;08:00" class="post-meta-item published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2020.6.1</time>
     
     
         
-        <time datetime="2020-05-22T12:54:09&#43;08:00" class="post-meta-item modified"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.5.22</time>
+        <time datetime="2020-06-01T22:06:55&#43;08:00" class="post-meta-item modified"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.6.1</time>
     
     
     
@@ -251,13 +251,13 @@
         
         
             
-                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="category-link">文献阅读</a></span>
+                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="/categories/%E6%9D%82%E8%AE%B0/" class="category-link">杂记</a></span>
             
         
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;128</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;164</span>
     
     
         
@@ -271,73 +271,20 @@
 
             <nav class="contents">
   <h2 id="contents" class="contents-title"></h2><ol class="toc">
-    <li><a id="contents:问题提出" href="#问题提出">问题提出</a></li>
-    <li><a id="contents:解决方案" href="#解决方案">解决方案</a>
-      <ol>
-        <li><a id="contents:简述" href="#简述">简述</a></li>
-        <li><a id="contents:节点的预训练" href="#节点的预训练">节点的预训练</a></li>
-        <li><a id="contents:图的预训练" href="#图的预训练">图的预训练</a></li>
-      </ol>
-    </li>
-    <li><a id="contents:实验和结果" href="#实验和结果">实验和结果</a></li>
+    <li><a id="contents:the-gelato-bet" href="#the-gelato-bet">The Gelato Bet</a></li>
   </ol>
 </nav><div class="post-body">
-              <h2 id="问题提出"><a href="#问题提出" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:问题提出" class="headings">问题提出</a></h2>
-<p>文章首先提出迁移学习在CV与NLP中已经应用广泛了，但在图数据上相应的预训练的工作还比较少。预训练主要解决目前图数据集的两个问题：</p>
-<ul>
-<li>task-specific labeled data can be extremely scarce.</li>
-<li>Graph data from real-world often contain out-of-distribution samples.</li>
-</ul>
-<p>第一个问题很好理解，在化学生物领域中，图数据（eg: molecule, protein, etc.）对应的标签的获取过程需要做实验，是资源密集且时间密集的。第二个问题个人理解指的是数据的整体分布和条件分布的区别。例如，所有已发现的分子数据库可看作是整体分布。而对特定的任务如MoleculeNet中的BBBP数据集<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">[1]</a></sup>，数据的分子则是在某些隐含条件下的，如具有一定的水溶性和脂溶性、常温下不太可能是气体、不太可能含有特定有毒的重金属元素/官能团。</p>
-<p>因此，不少研究都发现，简单地增加有标数据的量并不能一定让预训练或迁移学习进行得更好。相反，预训练需要领域知识来合理地选择和特定下游任务有关的数据。相反，如果下游任务和预训练的任务差别太大，则有可能导致“负迁移”（negative transfer）的问题。</p>
-<h2 id="解决方案"><a href="#解决方案" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:解决方案" class="headings">解决方案</a></h2>
-<h3 id="简述"><a href="#简述" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:简述" class="headings">简述</a></h3>
-<p><img src="https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-170447%402x.png" alt="思路简述"></p>
-<p>如上图，本文提出使用节点水平+图水平的预训练使得图网络既能学到节点与边层面上的特征（局部特征），也能捕捉到图级别的特征（全局特征）。作者为预训练设计了特定的任务，如上图右边，以此来对特定的图中信息进行建模。本文通过对比使用了比较新GIN模型作为预训练的图网络。</p>
-<h3 id="节点的预训练"><a href="#节点的预训练" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:节点的预训练" class="headings">节点的预训练</a></h3>
-<p>承上，节点的预训练作者提出了两种方案，分别针对邻居结构信息和自身节点信息。</p>
-<p><img src="https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-170517%402x.png" alt="节点嵌入"></p>
-<p>**Context prediction.**对每一个节点 $v$ ， $K$-hop 邻居指该节点出发最多 $K$-hop 以内的所有节点和边。也即是一个常见的 $K$ 层GNN能够搜集信息的范围，对应节点的表示向量 $h_v^{(K)}$ 则取决于它的 $K$-hop 邻居。Context graph 表示一些节点 $v$ 的邻居结构。它由两个参数 $r_1, r_2$ 控制。对于节点 $v$，表示由所有与 $v$ 距离 $r_1$-hop 和 $r_2$-hop 之间的节点和边所构成的子图，可近似看做一个环形区域。令 $r_1 &lt; K$，并将 $K$-hop 邻居和Context graph的交集被称为Context anchor nodes。这一任务如上图(a)所示，第一步先使用一个辅助GNN&rsquo;来得到Context graph中的节点向量表示，并对Context anchor nodes的表示求平均，得到绿色的向量，对于图 $G$ 中的节点 $v$ ，这样得到的向量为 $c_v^G$。第二步，用主GNN在 $K$-hop 邻居组成的子图上得到 $v$ 的表示 $h_v^{(K)}$。预训练的目标即为：
-$$
-\sigma(h_v^{(K)}\cdot c_{v&rsquo;}^G) \approx 1 \;\;\text{if $v$ and $v'$ are same node}
-$$
-$\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用negative sampling，控制 $v'=v$ 或 $G'=G$，让正负样本比例为1。这实际上是要学到图的拓扑结构。</p>
-<p><strong>Attribute masking.</strong> 随机mask掉分子图中的一些节点和边的属性，使用GNN预测。这个任务原理没有这么复杂，不再赘述。</p>
-<h3 id="图的预训练"><a href="#图的预训练" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:图的预训练" class="headings">图的预训练</a></h3>
-<p>图 $G$ 的向量表示 $h_G$ 下游任务进行微调训练时候直接使用的特征，我们应当让这类特征包含相关的领域知识。作者提出，使用图级别多任务有监督预训练（graph-level multi-task supervised pre-training）来同时预测同一个图的多个标签。但是，如果只是单纯的这样训练，如果预训练的任务与下游任务相关性不强或，则可能出现负迁移的现象。因此，作者认为图的预训练仅仅提供了图层面上的监督，即使节点表示学的很好，但图表示很可能在预训练阶段由于各种原因是没那么有意义的。因此，作者表示要缓解这个问题，就要先进行节点预训练，再进行图的预训练<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">[2]</a></sup>。另外，作者还说可以用图网络预测图之间的相似性来进行图的预训练。然而他说这个复杂度太高，他不做。</p>
-<h2 id="实验和结果"><a href="#实验和结果" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:实验和结果" class="headings">实验和结果</a></h2>
-<p>实验分别在化学任务和生物学任务上进行预训练效果测试。预训练数据来源是ZINC15，只在其中选了2百万个分子<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">[3]</a></sup>。详细数据和方法略去，仅介绍结果。</p>
-<p><img src="https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-183500%402x.png" alt="所有下游任务和与训练策略的比较"></p>
-<p>上图是GIN使用不同的与训练策略在下游任务（化学）中的表现，测评指标是ROC-AUC（%）。加粗字体表示最好的几个（best and comparable），灰框的表示出现了负迁移，结果比不预训练的网络还差。</p>
-<p><img src="https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-183515%402x.png" alt="不同模型是否预训练的结果变化"></p>
-<p>不同图网络模型在化学和生物两大类下游任务中的表现，比较预训练与否所带来的ROC-AUC（%）的变化，可以轻松看出GIN是最适合预训练的。</p>
-<p><img src="https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-184420%402x.png" alt="使用GIN与不同与训练策略进行蛋白质功能预测"></p>
-<p><img src="https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-184432%402x.png" alt="不同与训练策略的训练集和验证集ROC-AUC变化情况"></p>
-<ol>
-<li>印证了越复杂的模型就越能更好地利用预训练，相反，越有限的模型就越不能受益于预训练。</li>
-<li>仅仅进行了图级别的预训练是不够的，将导致较多负迁移现象（2/8）。</li>
-<li>仅仅进行了节点级别的预训练也是不够的，也会导致负迁移现象（1/8）。</li>
-<li>结合节点级别和图级别的预训练将能达到最优的下游任务表现，同时消除了负迁移。</li>
-<li>作者声称他的方法做到了目前最好<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">[4]</a></sup>。</li>
-<li>与训练模型在下游任务训练时能更快收敛（显然）。</li>
-</ol>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>这个数据集是测量一些化合物是否能突破人体血脑屏障的。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>这不是废话吗😓，反过来的话节点的预训练不就没用了。感觉这里把问题没讲清楚，实际上文中似乎就是把能获取到的数据都拿来预训练。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
-</li>
-<li id="fn:3" role="doc-endnote">
-<p>我个人也发现无标签分子的预训练一两百万就差不多很足够了，再多就没有意义了。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
-</li>
-<li id="fn:4" role="doc-endnote">
-<p>存疑，这几个数据集合同样是scaffold划分，都没有达到MoleculeNet的给出的结果，不知是如何state-of-the-art的。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
-</li>
-</ol>
-</section>
+              <h2 id="the-gelato-bet"><a href="#the-gelato-bet" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:the-gelato-bet" class="headings">The Gelato Bet</a></h2>
+<p><strong>本节翻译自<a href="https://people.eecs.berkeley.edu/~efros/gelato_bet.html" target="_blank" rel="noopener">The Gelato Bet</a>.</strong></p>
+<p>打赌在过去的日子中是科学圈中的趣事. 在牛津剑桥 (oxbridge) 大学的高级公共休息室(SCR)中, 我们仍然可以找到<a href="https://exetercollegespecialcollections.com/tag/betting-books/" target="_blank" rel="noopener">旧赌本</a>, 上面记录着牛津剑桥教员们打赌的历史, 读起来非常有趣. 在伯克利, 我们试着坚持这样的传统, 只是不是在烟雾缭绕的休息室, 而是在Nefli咖啡馆 (令人难过的是, 现已不在存在). 接下来打得这个赌发生在2014年9月23日, 三位公证人 (<a href="https://www.cs.cmu.edu/~katef/" target="_blank" rel="noopener">Kateria Fragkiadaki</a>, <a href="http://www.philkr.net/" target="_blank" rel="noopener">Philipp Krähenbühl</a>, and <a href="https://gkioxari.github.io/" target="_blank" rel="noopener">Georgia Gkioxari</a>, 照片见原链接) 面对面手握手打的赌.</p>
+<p><em>&ldquo;If, by the first day of autumn (Sept 23) of 2015, a method will exist that can match or beat the performance of R-CNN on Pascal VOC detection, without the use of any extra, human annotations (e.g. ImageNet) as pre-training, Mr. Malik promises to buy Mr. Efros one (1) gelato (2 scoops: one chocolate, one vanilla).&quot;</em></p>
+<p><em>&ldquo;如果, 在2015年秋天的第一天前 (2015年9月23日), 在不适用任何额外的, 人工标注数据 (如 ImageNet) 的预训练下, 出现一种方法能够在Pascal VOC检测任务性能上追平或击败R-CNN的话, Malik先生允诺为Efros先生买一个 glato (一种意大利冰淇淋), 冰淇淋有两个球, 一个巧克力味, 一个香草味. &ldquo;</em></p>
+<p>打这个赌的背景故事如下. R-CNN在CVPR 2014上被提出, 并在PASCAL VOC检测任务上拥有令人印象深刻的性能. 我认为这是计算机视觉社区中比较怀疑深度学习的成员 (包括我自己) 最终拥抱深度学习的关键时刻. 然而, 这其中还有一个难题: 据称, PASCAL VOC数据量太小, 无法从头训练出一个卷积网络, 因此, 网络不得不现在ImageNet上预训练, 然后在PASCAL上微调 (fine-tune). 这对我来说很是奇怪: PASCAL和ImageNet数据集是差异很大的数据集, 其中的标签集和重点完全不同&hellip; 为什么在已个数据集上训练会有利于另一个数据集上的性能呢? 那天下午在Nefli喝咖啡的时候, 我提出或许网络并不需要ImageNet的标签, 而仅仅需要图像用以预训练. 说穿了, 我想要回答的科学问题是: 学习好的表示需要语义监督吗? (does one need semantic supervision to learn a good representation?) 于是, Gelato Bet诞生了. 为了吸引其他的研究者参与这个赌局中来, 我承诺将分享我的glato冰淇淋给那些帮助我赢得这场赌局的研究团队.</p>
+<p>显而易见, 我输了, 即使是5年过去了, 我们依然没能够超越ImageNet预训练后的模型在PASCAL VOC任务上的性能 (虽然有几种方法距离超越仅一步之遥). 事实上, PASCAL任务需要预训练这个假定很可能一开始就是<a href="https://arxiv.org/abs/1708.01241" target="_blank" rel="noopener">有问题的</a>. 另一方面, 这个赌局对我们现在称之为的&quot;自监督学习&quot;在ICCV'15上的提出可能弃了一定作用. 最后, 这件事给我上了宝贵的一课: 和自己导师打赌前一定要三思而后行!</p>
+<p><em><a href="https://people.eecs.berkeley.edu/~efros/" target="_blank" rel="noopener">Alyosha Efros</a>
+Berkeley, CA
+2019年3月</em></p>
+<p><img src="https://people.eecs.berkeley.edu/~efros/img/malik_gelato.jpg" alt="胜利者在享用glato冰淇淋"><span class="caption">👉 Efros在享用他的双球冰淇淋</span></p>
 
             </div>
 
@@ -355,7 +302,7 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
                 
                 
                 
-                <li class="copyright-item link"><span class="copyright-item-text"></span><a href="/posts/strategies-for-pre-training-graph-neural-networks/" target="_blank" rel="noopener">https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/</a></li>
+                <li class="copyright-item link"><span class="copyright-item-text"></span><a href="/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BD%B6%E4%BA%8B%E8%B6%A3%E9%97%BB/" target="_blank" rel="noopener">https://minys233.github.io/posts/机器学习轶事趣闻/</a></li>
             
             <li class="copyright-item license"><span class="copyright-item-text"></span><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
             
@@ -366,9 +313,9 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2020-05-22 12:54:09 CST" style="cursor:help">
+        <span title="Updated @ 2020-06-01 22:06:55 CST" style="cursor:help">
 
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-05-22</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-05-22</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-06-01</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-06-01</text></g></svg>
         </span></div>
 
 
@@ -408,7 +355,7 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
     var typeNumber = 0;
     var errorCorrectionLevel = 'L';
     var qr = qrcode(typeNumber, errorCorrectionLevel);
-    qr.addData('https:\/\/minys233.github.io\/posts\/strategies-for-pre-training-graph-neural-networks\/');
+    qr.addData('https:\/\/minys233.github.io\/posts\/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BD%B6%E4%BA%8B%E8%B6%A3%E9%97%BB\/');
     qr.make();
     document.getElementById('qrcode-img').innerHTML = qr.createImgTag();
 </script>
@@ -431,19 +378,15 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
             <ul class="related-list">
                 
                     <li class="related-item">
-                        <a href="/posts/how-powerful-are-graph-neural-networks/" class="related-link">How Powerful Are Graph Neural Networks?</a>
-                    </li>
-                
-                    <li class="related-item">
                         <a href="/posts/learning-multimodal-graph-to-graph-translation-for-molecular-optimization/" class="related-link">Learning Multimodal Graph to Graph Translation for Molecular Optimization</a>
                     </li>
                 
                     <li class="related-item">
-                        <a href="/posts/%E5%AD%A6%E6%9C%AF%E8%8B%B1%E8%AF%AD%E5%86%99%E4%BD%9C/" class="related-link">学术英语写作</a>
+                        <a href="/posts/how-powerful-are-graph-neural-networks/" class="related-link">How Powerful Are Graph Neural Networks?</a>
                     </li>
                 
                     <li class="related-item">
-                        <a href="/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BD%B6%E4%BA%8B%E8%B6%A3%E9%97%BB/" class="related-link">机器学习轶事趣闻</a>
+                        <a href="/posts/strategies-for-pre-training-graph-neural-networks/" class="related-link">Strategies for Pre Training Graph Neural Networks</a>
                     </li>
                 
             </ul>
@@ -461,14 +404,6 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
                 
                 
                     
-                    <a href="/tags/graph-neural-network-gnn/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Graph Neural Network (GNN)</a>
-                
-            
-                
-                
-                
-                
-                    
                     <a href="/tags/machine-learning/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Machine Learning</a>
                 
             
@@ -480,13 +415,13 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
         
     <footer class="minimal-footer">
         
-            <div class="post-tag"><a href="/tags/graph-neural-network-gnn/" rel="tag" class="post-tag-link">#graph-neural-network-gnn</a> <a href="/tags/machine-learning/" rel="tag" class="post-tag-link">#machine-learning</a></div>
+            <div class="post-tag"><a href="/tags/machine-learning/" rel="tag" class="post-tag-link">#machine-learning</a></div>
         
         
         
             
                 <div class="post-category">
-                    <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="post-category-link">文献阅读</a>
+                    <a href="/categories/%E6%9D%82%E8%AE%B0/" class="post-category-link">杂记</a>
                 </div>
             
         
@@ -507,13 +442,9 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
     
         <ul class="post-nav">
             
-                <li class="post-nav-prev">
-                    <a href="/posts/%E5%AD%A6%E6%9C%AF%E8%8B%B1%E8%AF%AD%E5%86%99%E4%BD%9C/" rel="prev">&lt; 学术英语写作</a>
-                </li>
-            
             
                 <li class="post-nav-next">
-                    <a href="/posts/test-my-site/" rel="next">功能测试 &gt;</a>
+                    <a href="/posts/learning-multimodal-graph-to-graph-translation-for-molecular-optimization/" rel="next">Learning Multimodal Graph to Graph Translation for Molecular Optimization &gt;</a>
                 </li>
             
         </ul>
