@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Tue, 02 Jun 2020 22:55:37 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 02 Jun 2020 23:01:33 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://minys233.github.io/rss.xml" />
         
@@ -90,7 +90,7 @@ Berkeley, CA
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
                 
                     <description>&lt;h2 id=&#34;论文简述&#34;&gt;论文简述&lt;/h2&gt;
-&lt;p&gt;药物发现的目标是设计具有特定期望的化学性质的分子.  这个任务很具有挑战性, 因为化学空间是巨大的且难于探索. 一个解决该问题的流行的方法使匹配分子对分析 (MMPA). 通过学习&amp;quot;分子释义&amp;rdquo;, 来提升化合物特定的性质. 这与机器翻译的策略很相似: MMPA输入一个分子对 ${(X, Y)}$, 其中 $Y$ 看做是 $X$ 的释义/含义, 并具有更好的化学性质. 然而现有的MMPA方法将分子对提炼为图转化 (graph transformation) 问题, 而非更普适的图之间的翻译问题.&lt;/p&gt;
+&lt;p&gt;药物发现的目标是设计具有特定期望的化学性质的分子.  这个任务很具有挑战性, 因为化学空间是巨大的且难于探索. 一个解决该问题的流行的方法使匹配分子对分析 (MMPA). 通过学习&amp;quot;分子释义&amp;rdquo;, 来提升化合物特定的性质. 这与机器翻译的策略很相似: MMPA输入一个分子对 $\{(X, Y)\}$, 其中 $Y$ 看做是 $X$ 的释义/含义, 并具有更好的化学性质. 然而现有的MMPA方法将分子对提炼为图转化 (graph transformation) 问题, 而非更普适的图之间的翻译问题.&lt;/p&gt;
 &lt;p&gt;因此,本文提出将分子优化问题 (molecular optimization) 看做一个图对图的翻译 (graph-to-graph translation). 给定分子对的文集, 任务目标是学习如何将输入的分子图翻译为更好的图. 这个思路中涉及很多问题: 如何编码图, 如何生成图. 其中如何编码图已有若干工作, 但在不诉诸于专业领域知识的情况下生成图, 确是一个难题. 另外, 一个分子的&amp;quot;释义&amp;quot;可以是多个, 因为有不同的分子优化策略. 因此, 本文的问题最终转化为如何生成多模态的分子图.&lt;/p&gt;
 &lt;p&gt;本文使用了junction tree encoder-decoder来在注意力机制下解码生成分子图. 为了 (a) 捕捉不同的输出, 本文在解码过程中引入了隐码 (latent code), 使其能捕捉有意义的分子变种; 为了 (b) 避免无效的翻译结果, 本文以入了对抗训练, 使用随机选择的隐码对齐模型生成的图的分布和以观察到的有效输出 (真值) 的分布.&lt;/p&gt;
 &lt;h2 id=&#34;解决方案&#34;&gt;解决方案&lt;/h2&gt;
