@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Minys&#39;s blog</title>
-    <subtitle type="html">siteDescription</subtitle>
-    <updated>2020-06-03T02:09:09&#43;08:00</updated>
+    <subtitle type="html">Minys&#39;s blog - Record my ordinary life</subtitle>
+    <updated>2020-06-03T02:47:17&#43;08:00</updated>
     <id>https://minys233.github.io/</id>
     <link rel="alternate" type="text/html" href="https://minys233.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://minys233.github.io/atom.xml" />
@@ -103,7 +103,7 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \boldsymbol x_u = g_2\left( \boldsymbol f_u, \sum_{v\in N(u)} \boldsymbol \nu_{vu}^{(T)} \right)
 $$&lt;/p&gt;
-&lt;p&gt;对junction tree $\mathcal{T}$ 和分子图 $G$ 都使用消息传递网络编码,得到了 $\{\boldsymbol x_1^{\mathcal{T}},\cdots, \boldsymbol x_n^{\mathcal{T}}\}$ 与 $\{\boldsymbol x_1^{\mathcal{G}},\cdots, \boldsymbol x_n^{\mathcal{G}}\}$ .&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;对junction tree $\mathcal{T}$ 和分子图 $G$ 都使用消息传递网络编码,得到了 $\{\boldsymbol x_1^{\mathcal{T}},\cdots, \boldsymbol x_n^{\mathcal{T}}\}$ 与 $\{\boldsymbol x_1^{\mathcal{G}},\cdots, \boldsymbol x_n^{\mathcal{G}}\}$ .&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;https://minys233.github.io/posts/learning-multimodal-graph-to-graph-translation-for-molecular-optimization/#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h3 id=&#34;junction-tree解码器&#34;&gt;Junction Tree解码器&lt;/h3&gt;
 &lt;p&gt;这一步的目标是根据编码器输出的树表示和图表示重建junction tree. 这里使用了树循环神经(tree RNN)网络+注意力机制. 构建树的过程是自顶向下的, 每次拓展树的一个节点. 形式化地说, 令 $\tilde{\mathcal{E}}={(i_1,j_1),\cdots,(i_m,j_m)}$ 为树 $\mathcal{T}$ 的深度优先遍历, 其中 $m=2|\mathcal{E}|$ 因为每个边从两个方向看要算两次. 令 $\tilde{\mathcal{E}}_t$ 为 $\tilde{\mathcal{E}}$ 中前 $t$ 个边. 在第 $t$ 步的解码中, 模型访问节点 $i_t$ 并接受其邻居的消息 $\boldsymbol h_{ij}$ . 消息向量 $\boldsymbol h_{i_t,j_t}$ 通过 树GRU更新:
 $$
@@ -133,7 +133,7 @@ $$&lt;/p&gt;
 &lt;p&gt;解码的第二步是从上一步预测的junction tree $\mathcal{\hat{T}}$ 出发, 构建分子图 $G$. 这个过程是非确定性的, 因为如下图所示, 同样的junction tree可以组装成不同的分子. 这一过程的自由度取决于原子团(树的节点)之间是如何连接的. 令 $\mathcal{G}_i$ 为一个分子图集合, 表示节点 $i$ 能发生的可能的连接方式对应的分子.&lt;/p&gt;
 &lt;p&gt;每一个分子图 $G_i \in \mathcal G_i$ 都表示原子团 $C_i$ 和其邻居原子团 $\{C_j, j\in N_{\mathcal{\hat{T}}}(i)\}$ 的某种特定的连接方式. 这个图解码器的目标就是正确预测树中原子团的连接方式.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-06-02-114547.png&#34; title=&#34;相同的树可以组合为不同的分子.&#34; style=&#34;zoom:30%;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;为此, 本文作者设计了一个打分函数 $f(\cdot)$ 来对每一个 $\mathcal G_i$ 中的候选分子图 (对应连接方式) 进行排序. 首先, 用图消息传递网络对图 $G_i$ 计算原子表示 $\{\boldsymbol \mu_v^{G_i}\}$ . 然后使用sum-pooling求得图的表示 $\boldsymbol m_{G_i}=\sum_v \boldsymbol \mu_v^{G_i}$ . 最后, 通过点积函数为这个图打分 $f(G_i) = \sum_{u\in G}\boldsymbol m_{G_i}\cdot \boldsymbol x_u^{\mathcal{G}}$.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;解码器训练过程的损失函数是真值的子图和树中节点(原子团)的对数似然函数:
+&lt;p&gt;为此, 本文作者设计了一个打分函数 $f(\cdot)$ 来对每一个 $\mathcal G_i$ 中的候选分子图 (对应连接方式) 进行排序. 首先, 用图消息传递网络对图 $G_i$ 计算原子表示 $\{\boldsymbol \mu_v^{G_i}\}$ . 然后使用sum-pooling求得图的表示 $\boldsymbol m_{G_i}=\sum_v \boldsymbol \mu_v^{G_i}$ . 最后, 通过点积函数为这个图打分 $f(G_i) = \sum_{u\in G}\boldsymbol m_{G_i}\cdot \boldsymbol x_u^{\mathcal{G}}$.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;https://minys233.github.io/posts/learning-multimodal-graph-to-graph-translation-for-molecular-optimization/#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;解码器训练过程的损失函数是真值的子图和树中节点(原子团)的对数似然函数:
 $$
 \mathcal L_g(G) = \sum_i\left[ f(G_i)-\log\sum_{G_i&amp;rsquo;\in\mathcal G_i}exp(f(G_i&amp;rsquo;)) \right]
 $$&lt;/p&gt;
@@ -153,10 +153,10 @@ $$&lt;/p&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;这里有问题. junction tree中的节点数目按理来说应该小于分子图, 因为树中一个节点代表一个子结构. 但这里公式却写着两个嵌入向量集合具有相同的向量个数, 可能有误! &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这里有问题. junction tree中的节点数目按理来说应该小于分子图, 因为树中一个节点代表一个子结构. 但这里公式却写着两个嵌入向量集合具有相同的向量个数, 可能有误! &lt;a href=&#34;https://minys233.github.io/posts/learning-multimodal-graph-to-graph-translation-for-molecular-optimization/#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;这个打分函数我强烈怀疑有问题. 竟然解码的结果会和编码的结果比较, 这不就相当于解码器模型的输出好坏取决于输入吗? 个人感觉这里有问题. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这个打分函数我强烈怀疑有问题. 竟然解码的结果会和编码的结果比较, 这不就相当于解码器模型的输出好坏取决于输入吗? 个人感觉这里有问题. &lt;a href=&#34;https://minys233.github.io/posts/learning-multimodal-graph-to-graph-translation-for-molecular-optimization/#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -225,7 +225,7 @@ $$&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The Weisfeiler-Lehman Isomorphism Test produces canonical forms of graphs. &lt;strong&gt;If the canonical forms of two graphs are not same, then two graphs are not isomorphic&lt;/strong&gt;. It is possible for two graphs to have same canonical forms but are not isomorphic. The algorithm iterative encode nodes (usually by a hash function) in a graph based on its neighbors to generate some kind of &amp;ldquo;fingerprint&amp;rdquo; or &amp;ldquo;signature&amp;rdquo;. With same initialization, we could find correspondance nodes in two graphs when they share the same fingerprint.&lt;/p&gt;
 &lt;h3 id=&#34;graph-neural-network&#34;&gt;Graph neural network&lt;/h3&gt;
-&lt;p&gt;最为常见的GNN范式可以如此描述.对于图 $G=(V,E)$ , $X_v$ 表示其节点 $v\in V$ 的特征向量(feature vector)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. 图网络的流程可以简单概括如下：
+&lt;p&gt;最为常见的GNN范式可以如此描述.对于图 $G=(V,E)$ , $X_v$ 表示其节点 $v\in V$ 的特征向量(feature vector)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;https://minys233.github.io/posts/how-powerful-are-graph-neural-networks/#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. 图网络的流程可以简单概括如下：
 $$
 \begin{aligned}
 a_v^{(k)}&amp;amp;=\text{AGGREGATE}^{(k)}\left( \left\{\left. h_u^{(k-1)}\right|u\in \mathcal{N}(v) \right\} \right), \\&lt;br&gt;
@@ -265,7 +265,7 @@ $$
 $$
 h_v^{(k)}=\text{MLP}^{(k)}\left(\left( 1+\epsilon^{(k)} \right)\cdot h_v^{(k-1)}+\sum_{u\in\mathcal{N}(v)}h_u^{(k-1)}\right)
 $$
-最后, 还差一个 $\text{READOUT}$ 函数. 作者提出, 在节点对应的遍历树逐渐趋近整个图的时候, 图中的特征将会有更好的判别性能. 但迭代轮数较小时候的特征却可以拥有更好的泛化性能&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. 因此作者表示为了能考虑到图中所有结构信息, 我们应当使用所有迭代过程中的特征. 作者通过一个与 Jumping Knowledge Network类似的架构实现了这样的操作:
+最后, 还差一个 $\text{READOUT}$ 函数. 作者提出, 在节点对应的遍历树逐渐趋近整个图的时候, 图中的特征将会有更好的判别性能. 但迭代轮数较小时候的特征却可以拥有更好的泛化性能&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;https://minys233.github.io/posts/how-powerful-are-graph-neural-networks/#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. 因此作者表示为了能考虑到图中所有结构信息, 我们应当使用所有迭代过程中的特征. 作者通过一个与 Jumping Knowledge Network类似的架构实现了这样的操作:
 $$
 h_G=\text{CONCAT} \left( \text{READOUT}\left.\left.\left(\left\{h_v^{(k)}\right|v \in G\right\} \right) \right| k=0,1,\dots,K \right)
 $$
@@ -289,10 +289,10 @@ $$
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;这里特征向量指的并非线性代数中的特征向量. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这里特征向量指的并非线性代数中的特征向量. &lt;a href=&#34;https://minys233.github.io/posts/how-powerful-are-graph-neural-networks/#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;作者没有解释, 我也不是很理解这里 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;作者没有解释, 我也不是很理解这里 &lt;a href=&#34;https://minys233.github.io/posts/how-powerful-are-graph-neural-networks/#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -343,7 +343,9 @@ $$
                     <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">The process is seeded with $N$ vectors &amp;hellip; From Constrained Graph Variational Autoencoders for Molecule Design GNNs follow a neighborhood aggregation scheme, where the representation vector of a node is computed by recursively aggregating and trans- forming representation vectors of its neighboring nodes. Recently, there has been a surge of interest in Graph Neural Network (GNN) approaches for representation learning of graphs. From How Powerful Are Graph Neural Networks? Since molecules can be optimized in different ways, there are multiple viable translations for each input graph. From Learning Multimodal Graph to Graph Translation for Molecular Optimization &amp;hellip; converge to brittle solutions From Ankesh Anand&amp;rsquo;s blog The goal of drug discovery is to design molecules with desirable chemical properties. The task is challenging since the chemical space is vast and often difficult to navigate. From Learning Multimodal Graph to Graph Translation for Molecular Optimization</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">The process is seeded with $N$ vectors &amp;hellip; From Constrained Graph Variational Autoencoders for Molecule Design GNNs follow a neighborhood aggregation scheme, where the representation vector of a node is computed by recursively aggregating and trans- forming representation vectors of its neighboring…
+    
+    </summary>
             
                 <content type="html">&lt;blockquote&gt;
 &lt;p&gt;The process is &lt;strong&gt;seeded with&lt;/strong&gt; $N$ vectors &amp;hellip;&lt;/p&gt;
@@ -417,7 +419,7 @@ $$
 &lt;li&gt;task-specific labeled data can be extremely scarce.&lt;/li&gt;
 &lt;li&gt;Graph data from real-world often contain out-of-distribution samples.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;第一个问题很好理解，在化学生物领域中，图数据（eg: molecule, protein, etc.）对应的标签的获取过程需要做实验，是资源密集且时间密集的。第二个问题个人理解指的是数据的整体分布和条件分布的区别。例如，所有已发现的分子数据库可看作是整体分布。而对特定的任务如MoleculeNet中的BBBP数据集&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，数据的分子则是在某些隐含条件下的，如具有一定的水溶性和脂溶性、常温下不太可能是气体、不太可能含有特定有毒的重金属元素/官能团。&lt;/p&gt;
+&lt;p&gt;第一个问题很好理解，在化学生物领域中，图数据（eg: molecule, protein, etc.）对应的标签的获取过程需要做实验，是资源密集且时间密集的。第二个问题个人理解指的是数据的整体分布和条件分布的区别。例如，所有已发现的分子数据库可看作是整体分布。而对特定的任务如MoleculeNet中的BBBP数据集&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，数据的分子则是在某些隐含条件下的，如具有一定的水溶性和脂溶性、常温下不太可能是气体、不太可能含有特定有毒的重金属元素/官能团。&lt;/p&gt;
 &lt;p&gt;因此，不少研究都发现，简单地增加有标数据的量并不能一定让预训练或迁移学习进行得更好。相反，预训练需要领域知识来合理地选择和特定下游任务有关的数据。相反，如果下游任务和预训练的任务差别太大，则有可能导致“负迁移”（negative transfer）的问题。&lt;/p&gt;
 &lt;h2 id=&#34;解决方案&#34;&gt;解决方案&lt;/h2&gt;
 &lt;h3 id=&#34;简述&#34;&gt;简述&lt;/h3&gt;
@@ -433,9 +435,9 @@ $$
 $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用negative sampling，控制 $v&#39;=v$ 或 $G&#39;=G$，让正负样本比例为1。这实际上是要学到图的拓扑结构。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Attribute masking.&lt;/strong&gt; 随机mask掉分子图中的一些节点和边的属性，使用GNN预测。这个任务原理没有这么复杂，不再赘述。&lt;/p&gt;
 &lt;h3 id=&#34;图的预训练&#34;&gt;图的预训练&lt;/h3&gt;
-&lt;p&gt;图 $G$ 的向量表示 $h_G$ 下游任务进行微调训练时候直接使用的特征，我们应当让这类特征包含相关的领域知识。作者提出，使用图级别多任务有监督预训练（graph-level multi-task supervised pre-training）来同时预测同一个图的多个标签。但是，如果只是单纯的这样训练，如果预训练的任务与下游任务相关性不强或，则可能出现负迁移的现象。因此，作者认为图的预训练仅仅提供了图层面上的监督，即使节点表示学的很好，但图表示很可能在预训练阶段由于各种原因是没那么有意义的。因此，作者表示要缓解这个问题，就要先进行节点预训练，再进行图的预训练&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。另外，作者还说可以用图网络预测图之间的相似性来进行图的预训练。然而他说这个复杂度太高，他不做。&lt;/p&gt;
+&lt;p&gt;图 $G$ 的向量表示 $h_G$ 下游任务进行微调训练时候直接使用的特征，我们应当让这类特征包含相关的领域知识。作者提出，使用图级别多任务有监督预训练（graph-level multi-task supervised pre-training）来同时预测同一个图的多个标签。但是，如果只是单纯的这样训练，如果预训练的任务与下游任务相关性不强或，则可能出现负迁移的现象。因此，作者认为图的预训练仅仅提供了图层面上的监督，即使节点表示学的很好，但图表示很可能在预训练阶段由于各种原因是没那么有意义的。因此，作者表示要缓解这个问题，就要先进行节点预训练，再进行图的预训练&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。另外，作者还说可以用图网络预测图之间的相似性来进行图的预训练。然而他说这个复杂度太高，他不做。&lt;/p&gt;
 &lt;h2 id=&#34;实验和结果&#34;&gt;实验和结果&lt;/h2&gt;
-&lt;p&gt;实验分别在化学任务和生物学任务上进行预训练效果测试。预训练数据来源是ZINC15，只在其中选了2百万个分子&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。详细数据和方法略去，仅介绍结果。&lt;/p&gt;
+&lt;p&gt;实验分别在化学任务和生物学任务上进行预训练效果测试。预训练数据来源是ZINC15，只在其中选了2百万个分子&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。详细数据和方法略去，仅介绍结果。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-183500%402x.png&#34; alt=&#34;所有下游任务和与训练策略的比较&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上图是GIN使用不同的与训练策略在下游任务（化学）中的表现，测评指标是ROC-AUC（%）。加粗字体表示最好的几个（best and comparable），灰框的表示出现了负迁移，结果比不预训练的网络还差。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-183515%402x.png&#34; alt=&#34;不同模型是否预训练的结果变化&#34;&gt;&lt;/p&gt;
@@ -447,23 +449,23 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
 &lt;li&gt;仅仅进行了图级别的预训练是不够的，将导致较多负迁移现象（2/8）。&lt;/li&gt;
 &lt;li&gt;仅仅进行了节点级别的预训练也是不够的，也会导致负迁移现象（1/8）。&lt;/li&gt;
 &lt;li&gt;结合节点级别和图级别的预训练将能达到最优的下游任务表现，同时消除了负迁移。&lt;/li&gt;
-&lt;li&gt;作者声称他的方法做到了目前最好&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;。&lt;/li&gt;
+&lt;li&gt;作者声称他的方法做到了目前最好&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;。&lt;/li&gt;
 &lt;li&gt;与训练模型在下游任务训练时能更快收敛（显然）。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;这个数据集是测量一些化合物是否能突破人体血脑屏障的。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这个数据集是测量一些化合物是否能突破人体血脑屏障的。 &lt;a href=&#34;https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;这不是废话吗😓，反过来的话节点的预训练不就没用了。感觉这里把问题没讲清楚，实际上文中似乎就是把能获取到的数据都拿来预训练。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这不是废话吗😓，反过来的话节点的预训练不就没用了。感觉这里把问题没讲清楚，实际上文中似乎就是把能获取到的数据都拿来预训练。 &lt;a href=&#34;https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;我个人也发现无标签分子的预训练一两百万就差不多很足够了，再多就没有意义了。 &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我个人也发现无标签分子的预训练一两百万就差不多很足够了，再多就没有意义了。 &lt;a href=&#34;https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;存疑，这几个数据集合同样是scaffold划分，都没有达到MoleculeNet的给出的结果，不知是如何state-of-the-art的。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;存疑，这几个数据集合同样是scaffold划分，都没有达到MoleculeNet的给出的结果，不知是如何state-of-the-art的。 &lt;a href=&#34;https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -514,7 +516,7 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
                     <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">这是一个一级标题 这是一个二级标题 数学公式 简单公式$A+B=C$这是行内公式 $$ a^2 + b^2 = c^2$$ $$x=\frac{-b\pm\sqrt{4ac}}{2a}$$ 复杂公式 $$ \begin{aligned} \mathcal{L} ( \mu ,\sigma^2 ) &amp;amp;= \prod_{i = 1}^n \left\lbrace \frac{1}{\sqrt{2 \pi} \sigma } \text{exp} \left\lbrace - \frac{( x_i - \mu)^2}{2 \sigma^2}\right\rbrace \right\rbrace ,\\ &amp;amp;= (2 \pi \sigma^2)^{- \frac{n}{2}} \text{exp} \left\lbrace - \frac{1}{2 \sigma^2} \sum_{i = 1}^{n} (x_i - \mu)^2 \right\rbrace . \end{aligned} $$ 公式作为TOC项目 $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ 一元二次方程解的公式$x= \frac{-b\pm\sqrt{4ac}}{2a}$ 化学式$\ce{H3O+}$ $\ce{[AgCl2]-}$ $\ce{NaOH(aq,$\infty$)}$ $\ce{Hg^2+ -&amp;gt;[I-] $\underset{\mathrm{red}}{\ce{HgI2}}$ -&amp;gt;[I-] $\underset{\mathrm{red}}{\ce{[Hg^{II}I4]^2-}}$}$ Emoji 🌶💉🔟🐮🍺 代码
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">这是一个一级标题 这是一个二级标题 数学公式 简单公式$A+B=C$这是行内公式 $$ a^2 + b^2 =…
     
     </summary>
             
