@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US">
     <title type="text">Minys&#39;s blog</title>
     <subtitle type="html">siteDescription</subtitle>
-    <updated>2020-06-02T23:23:15&#43;08:00</updated>
+    <updated>2020-06-03T01:14:25&#43;08:00</updated>
     <id>https://minys233.github.io/</id>
     <link rel="alternate" type="text/html" href="https://minys233.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://minys233.github.io/atom.xml" />
@@ -74,7 +74,7 @@ Berkeley, CA
             <title type="text">Learning Multimodal Graph to Graph Translation for Molecular Optimization</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/learning-multimodal-graph-to-graph-translation-for-molecular-optimization/" />
             <id>https://minys233.github.io/posts/learning-multimodal-graph-to-graph-translation-for-molecular-optimization/</id>
-            <updated>2020-06-02T23:23:11&#43;08:00</updated>
+            <updated>2020-06-03T01:14:20&#43;08:00</updated>
             <published>2020-05-28T22:52:13&#43;08:00</published>
             <author>
                     <name>Minys</name>
@@ -93,46 +93,49 @@ Berkeley, CA
 &lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-06-01-145411.png&#34; alt=&#34;&#34; title=&#34;Encoder-decoder示意图. 分子表示为对应的图结构和记录分子骨架的junction tree. 其中树中的节点表示一个子结构. 解码过程中, 模型先解码出junction tree, 而后联合子结构最终预测出分子图.&#34;&gt;&lt;/p&gt;
 &lt;p&gt;模型的编码器包含: 一个图消息传递网络, 编码树和图至嵌入向量. 模型的解码器包含: (1) 树结构解码器, 用以预测junction tree的结构, (2) 一个图解码器, 用以将树扩充为分子图.&lt;/p&gt;
 &lt;h3 id=&#34;树图二合一编码器&#34;&gt;树图二合一编码器&lt;/h3&gt;
-&lt;p&gt;图定义为 $G=(\mathcal{V}, \mathcal{E})$. 图中节点 $v$ 具有特征 $\boldsymbol{f}&lt;em&gt;v$ . 对原子来说, 其中包含了原子类型, 化合价等原子性质. 对junction tree中的节点 (文中称cluster),  $\boldsymbol{f}&lt;em&gt;v$ 是one-hot向量, 表示其类别. 类似地, 边 $(u,v)\in\mathcal{E}$ 也有对应的特征 $\boldsymbol{f}&lt;/em&gt;{uv}$ . $N(v)$ 表示节点 $v$ 邻居构成的集合. 每条边 $(u,v)$ 有两个隐向量 $\boldsymbol{\nu}&lt;/em&gt;{uv}$, $\boldsymbol{\nu}&lt;em&gt;{vu}$, 分别表示两个方向传递的消息. 则消息传递网络通过神经网络 $g_1(\cdot)$ 更新图中边上的消息:
-$$
-\boldsymbol{\nu}&lt;/em&gt;{uv}^{(t)}=g_1\left(\boldsymbol{f}&lt;em&gt;u, \boldsymbol{f}&lt;/em&gt;{uv}, \sum_{w\in N(u)\backslash v} \boldsymbol{\nu}_{wu}^{(t-1)}\right)
-$$
-其中 $\boldsymbol{\nu}_{uv}^{(t)}$ 表示第 $t$ 次迭代时边 $(u,v)$ 上的消息, 其初始化为零向量. 图上节点更新顺序是异步的, 即没有预定义的顺序. 在 $T$ 次迭代之后, 我们将图中消息通过神经网络 $g_2(\cdot)$ 聚合, 得到每一个节点的嵌入向量, 其刻画了**图或树中的局部结构**.
-$$
-\boldsymbol{x}_u = g_2\left( \boldsymbol{f}_u, \sum_{v\in N(u)} \boldsymbol{\nu}_{vu}^{(T)} \right)
-$$
-对junction tree $\mathcal{T}$ 和分子图 $G$ 都使用消息传递网络编码,得到了 ${\boldsymbol{x}_1^{\mathcal{T}},\cdots, \boldsymbol{x}_n^{\mathcal{T}}}$ 与 ${\boldsymbol{x}_1^{\mathcal{G}},\cdots, \boldsymbol{x}_n^{\mathcal{G}}}$ .&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;图定义为 $G=(\mathcal{V}, \mathcal{E})$. 图中节点 $v$ 具有特征 $\boldsymbol f_v$ . 对原子来说, 其中包含了原子类型, 化合价等原子性质. 对junction tree中的节点 (文中称cluster),  $\boldsymbol f_v$ 是one-hot向量, 表示其类别. 类似地, 边 $(u,v)\in\mathcal{E}$ 也有对应的特征 $\boldsymbol f_{uv}$. $N(v)$ 表示节点 $v$ 邻居构成的集合. 每条边 $(u,v)$ 有两个隐向量: $\boldsymbol\nu_{uv} , \boldsymbol\nu_{vu}$ , 分别表示两个方向传递的消息. 则消息传递网络通过神经网络 $g_1(\cdot)$ 更新图中边上的消息:&lt;/p&gt;
+&lt;p&gt;$$
+\boldsymbol\nu_{uv}^{(t)}=g_1\left(\boldsymbol f_u,
+\boldsymbol f_{uv}, \sum_{w\in N(u)\backslash v}
+\boldsymbol\nu_{wu}^{(t-1)}\right)
+$$&lt;/p&gt;
+&lt;p&gt;其中 $\boldsymbol \nu_{uv}^{(t)}$ 表示第 $t$ 次迭代时边 $(u,v)$ 上的消息, 其初始化为零向量. 图上节点更新顺序是异步的, 即没有预定义的顺序. 在 $T$ 次迭代之后, 我们将图中消息通过神经网络 $g_2(\cdot)$ 聚合, 得到每一个节点的嵌入向量, 其刻画了**图或树中的局部结构**.&lt;/p&gt;
+&lt;p&gt;$$
+\boldsymbol x_u = g_2\left( \boldsymbol f_u, \sum_{v\in N(u)} \boldsymbol \nu_{vu}^{(T)} \right)
+$$&lt;/p&gt;
+&lt;p&gt;对junction tree $\mathcal{T}$ 和分子图 $G$ 都使用消息传递网络编码,得到了 $\{\boldsymbol x_1^{\mathcal{T}},\cdots, \boldsymbol x_n^{\mathcal{T}}\}$ 与 $\{\boldsymbol x_1^{\mathcal{G}},\cdots, \boldsymbol x_n^{\mathcal{G}}\}$ .&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h3 id=&#34;junction-tree解码器&#34;&gt;Junction Tree解码器&lt;/h3&gt;
-&lt;p&gt;这一步的目标是根据编码器输出的树表示和图表示重建junction tree. 这里使用了树循环神经(tree RNN)网络+注意力机制. 构建树的过程是自顶向下的, 每次拓展树的一个节点. 形式化地说, 令 $\tilde{\mathcal{E}}={(i_1,j_1),\cdots,(i_m,j_m)}$ 为树 $\mathcal{T}$ 的深度优先遍历, 其中 $m=2|\mathcal{E}|$ 因为每个边从两个方向看要算两次. 令 $\tilde{\mathcal{E}}&lt;em&gt;t$ 为 $\tilde{\mathcal{E}}$ 中前 $t$ 个边. 在第 $t$ 步的解码中, 模型访问节点 $i_t$ 并接受其邻居的消息 $\boldsymbol{h}&lt;/em&gt;{ij}$ . 消息向量 $\boldsymbol{h}&lt;em&gt;{i_t,j_t}$ 通过 树GRU更新:
+&lt;p&gt;这一步的目标是根据编码器输出的树表示和图表示重建junction tree. 这里使用了树循环神经(tree RNN)网络+注意力机制. 构建树的过程是自顶向下的, 每次拓展树的一个节点. 形式化地说, 令 $\tilde{\mathcal{E}}={(i_1,j_1),\cdots,(i_m,j_m)}$ 为树 $\mathcal{T}$ 的深度优先遍历, 其中 $m=2|\mathcal{E}|$ 因为每个边从两个方向看要算两次. 令 $\tilde{\mathcal{E}}_t$ 为 $\tilde{\mathcal{E}}$ 中前 $t$ 个边. 在第 $t$ 步的解码中, 模型访问节点 $i_t$ 并接受其邻居的消息 $\boldsymbol h_{ij}$ . 消息向量 $\boldsymbol h_{i_t,j_t}$ 通过 树GRU更新:
 $$
-\boldsymbol{h}&lt;/em&gt;{i_t,j_t} = \text{GRU}(\boldsymbol{f}&lt;em&gt;{i_t}, {\boldsymbol{h}&lt;/em&gt;{k, i_t}}_{(k, i_t)\in \tilde{\mathcal{E}}, k\ne j_t})
+\boldsymbol h_{i_t,j_t} = \text{GRU}(\boldsymbol f_{i_t}, \{\boldsymbol h_{k, i_t}\}_{(k, i_t)\in \tilde{\mathcal{E}}, k\ne j_t})
 $$&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;拓扑结构预测&lt;/strong&gt;. 当模型访问节点 $i_t$ 时, 首先通过一层神经网络编码节点特征 $\boldsymbol{f}&lt;em&gt;{i_t}$ 和输入消息 ${\boldsymbol{h}&lt;/em&gt;{k, i_t}}$ 来计算计算隐状态 $\boldsymbol{h}&lt;em&gt;t$. 模型随后进行二分类, 预测是否拓展这个新节点, 或是回溯回 $i_t$ 的父亲节点. 概率是通过聚合编码器所编码的两组嵌入向量 ${\boldsymbol{x}&lt;/em&gt;*^{\mathcal{T}}}, {\boldsymbol{x}&lt;em&gt;*^{\mathcal{G}}}$ 而来的.
+&lt;p&gt;&lt;strong&gt;拓扑结构预测&lt;/strong&gt;. 当模型访问节点 $i_t$ 时, 首先通过一层神经网络编码节点特征 $\boldsymbol f_{i_t}$ 和输入消息 $\{\boldsymbol h_{k, i_t}\}$ 来计算计算隐状态 $\boldsymbol h_t$. 模型随后进行二分类, 预测是否拓展这个新节点, 或是回溯回 $i_t$ 的父亲节点. 概率是通过聚合编码器所编码的两组嵌入向量 $\{\boldsymbol x_*^{\mathcal{T}}\}, \{\boldsymbol x_*^{\mathcal{G}}\}$ 而来的.
 $$
 \begin{aligned}
-\boldsymbol{h}&lt;em&gt;t &amp;amp;= \tau(\boldsymbol{W}&lt;em&gt;1^d\boldsymbol{f}&lt;/em&gt;{i_t}+\boldsymbol{W}&lt;em&gt;2^d\sum&lt;/em&gt;{(k,i_t)\in \tilde{\mathcal{E}}&lt;em&gt;t}\boldsymbol{h}&lt;/em&gt;{k,i_t}) \&lt;br&gt;
-\boldsymbol{c}&lt;em&gt;t^d &amp;amp;= \text{attention}(\boldsymbol{h}&lt;em&gt;t, {\boldsymbol{x}&lt;/em&gt;*^{\mathcal{T}}}, {\boldsymbol{x}&lt;/em&gt;*^{\mathcal{G}}}; \boldsymbol{U}&lt;/em&gt;{att}^d) \&lt;br&gt;
-\boldsymbol{p}&lt;em&gt;t &amp;amp;= \sigma(\boldsymbol{u}^d\cdot\tau(\boldsymbol{W}&lt;em&gt;3^d\boldsymbol{h}&lt;em&gt;t+\boldsymbol{W}&lt;em&gt;4^d\boldsymbol{c}&lt;em&gt;t^d))
+\boldsymbol h_t &amp;amp;= \tau(\boldsymbol W_1^d\boldsymbol f_{i_t}+\boldsymbol W_2^d\sum_{(k,i_t)\in \tilde{\mathcal{E}}_t}\boldsymbol h_{k,i_t}) \\&lt;br&gt;
+\boldsymbol c_t^d &amp;amp;= \text{attention}(\boldsymbol h_t, {\boldsymbol x_*^{\mathcal{T}}}, {\boldsymbol x_*^{\mathcal{G}}}; \boldsymbol U_{att}^d) \\&lt;br&gt;
+\boldsymbol p_t &amp;amp;= \sigma(\boldsymbol u^d\cdot\tau(\boldsymbol W_3^d\boldsymbol h_t+\boldsymbol W_4^d\boldsymbol c_t^d))
 \end{aligned}
 $$
-其中 $(\cdot;\boldsymbol{U}&lt;/em&gt;{att}^d)$ 表示参数为 $\boldsymbol{U}&lt;/em&gt;{att}^d$ 的注意力机制, 其在树和图上分别计算得到两组注意力分数 ${\boldsymbol{\alpha}&lt;/em&gt;*^{\mathcal{T}}}, {\boldsymbol{\alpha}&lt;/em&gt;*^{\mathcal{G}}}$ . 输出的 $\boldsymbol{c}&lt;em&gt;t^d$ 是树和图的注意力加权向量的级联.
+其中 $(\cdot;\boldsymbol U_{att}^d)$ 表示参数为 $\boldsymbol U_{att}^d$ 的注意力机制, 其在树和图上分别计算得到两组注意力分数 ${\boldsymbol \alpha_*^{\mathcal{T}}}, {\boldsymbol \alpha_*^{\mathcal{G}}}$ . 输出的 $\boldsymbol c_t^d$ 是树和图的注意力加权向量的级联.
 $$
-\boldsymbol{c}&lt;em&gt;t^d = \left[ \sum_i \boldsymbol{\alpha}&lt;/em&gt;{i,t}^{\mathcal{T}}\boldsymbol{x}&lt;/em&gt;{i}^{\mathcal{T}}, \sum_i \boldsymbol{\alpha}&lt;/em&gt;{i,t}^{\mathcal{G}}\boldsymbol{x}&lt;/em&gt;{i}^{\mathcal{G}} \right]
-$$
-&lt;strong&gt;标签预测&lt;/strong&gt;. 如果节点 $j_t$ 是 $i_t$ 生成的新节点, 其标签(表明它是何种分子骨架的标签)可以通过下式预测.
+\boldsymbol c_t^d =  \left[\sum_i \boldsymbol \alpha_{i,t}^{\mathcal{T}}\boldsymbol x_{i}^{\mathcal{T}}, \sum_i \boldsymbol \alpha_{i,t}^{\mathcal{G}}\boldsymbol x_{i}^{\mathcal{G}}\right]
+$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;标签预测&lt;/strong&gt;. 如果节点 $j_t$ 是 $i_t$ 生成的新节点, 其标签(表明它是何种分子骨架的标签)可以通过下式预测.
 $$
 \begin{aligned}
-\boldsymbol{c}&lt;em&gt;t^l&amp;amp;=\text{attention}(\boldsymbol{h}&lt;/em&gt;{i_t,j_t}, {\boldsymbol{x}&lt;em&gt;*^{\mathcal{T}}}, {\boldsymbol{x}&lt;/em&gt;*^{\mathcal{G}}}; \boldsymbol{U}_{att}^l) \&lt;br&gt;
-\boldsymbol{q}_t &amp;amp;= \text{softmax}(\boldsymbol{U}^l\cdot\tau(\boldsymbol{W}&lt;em&gt;1^l\boldsymbol{h}&lt;/em&gt;{i_t,j_t}+\boldsymbol{W}_2^l\boldsymbol{c}_t^l))
+\boldsymbol c_t^l &amp;amp;=\text{attention}(\boldsymbol h_{i_t,j_t}, {\boldsymbol x_*^{\mathcal{T}}}, {\boldsymbol x_*^{\mathcal{G}}}; \boldsymbol U_{att}^l) \\&lt;br&gt;
+\boldsymbol q_t &amp;amp;= \text{softmax}(\boldsymbol U^l\cdot\tau(\boldsymbol W_1^l\boldsymbol h_{i_t,j_t}+\boldsymbol W_2^l\boldsymbol c_t^l))
 \end{aligned}
 $$&lt;/p&gt;
-&lt;p&gt;其中 $\boldsymbol{q}&lt;em&gt;t$ 是在标签集上的概率分布, $\boldsymbol{U}&lt;/em&gt;{att}^l$ 是另一组计算注意力时的参数.&lt;/p&gt;
+&lt;p&gt;其中 $\boldsymbol q_t$ 是在标签集上的概率分布, $\boldsymbol U_{att}^l$ 是另一组计算注意力时的参数.&lt;/p&gt;
 &lt;h3 id=&#34;图解码器&#34;&gt;图解码器&lt;/h3&gt;
-&lt;p&gt;解码的第二步是从上一步预测的junction tree $\mathcal{\hat{T}}$ 出发, 构建分子图 $G$. 这个过程是非确定性的, 因为如下图所示, 同样的junction tree可以组装成不同的分子. 这一过程的自由度取决于原子团(树的节点)之间是如何连接的. 令 $\mathcal{G}_i$ 为一个分子图集合, 表示节点 $i$ 能发生的可能的连接方式对应的分子. 每一个分子图 $G_i\in \mathcal{G}&lt;em&gt;i$ 都表示原子团 $C_i$ 和其邻居原子团 ${C_j, j\in N&lt;/em&gt;{\mathcal{\hat{T}}}(i)}$ 的某种特定的连接方式. 这个图解码器的目标就是正确预测树中原子团的连接方式.&lt;/p&gt;
+&lt;p&gt;解码的第二步是从上一步预测的junction tree $\mathcal{\hat{T}}$ 出发, 构建分子图 $G$. 这个过程是非确定性的, 因为如下图所示, 同样的junction tree可以组装成不同的分子. 这一过程的自由度取决于原子团(树的节点)之间是如何连接的. 令 $\mathcal{G}_i$ 为一个分子图集合, 表示节点 $i$ 能发生的可能的连接方式对应的分子.&lt;/p&gt;
+&lt;p&gt;每一个分子图 $G_i \in \mathcal G_i$ 都表示原子团 $C_i$ 和其邻居原子团 $\{C_j, j\in N_{\mathcal{\hat{T}}}(i)\}$ 的某种特定的连接方式. 这个图解码器的目标就是正确预测树中原子团的连接方式.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-06-02-114547.png&#34; title=&#34;相同的树可以组合为不同的分子.&#34; style=&#34;zoom:30%;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;为此, 本文作者设计了一个打分函数 $f(\cdot)$ 来对每一个 $\mathcal{G}&lt;em&gt;i$ 中的候选分子图 (对应连接方式) 进行排序. 首先, 用图消息传递网络对图 $G_i$ 计算原子表示 ${\boldsymbol{\mu}&lt;em&gt;v^{G_i}}$ . 然后使用sum-pooling求得图的表示 $\boldsymbol{m&lt;/em&gt;{G_i}}=\sum_v \boldsymbol{\mu}&lt;em&gt;v^{G_i}$ . 最后, 通过点积函数为这个图打分 $f(G_i) = \sum&lt;/em&gt;{u\in G}\boldsymbol{m}&lt;/em&gt;{G_i}\cdot \boldsymbol{x}_u^{\mathcal{G}}$.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;解码器训练过程的损失函数是真值的子图和树中节点(原子团)的对数似然函数:
+&lt;p&gt;为此, 本文作者设计了一个打分函数 $f(\cdot)$ 来对每一个 $\mathcal G_i$ 中的候选分子图 (对应连接方式) 进行排序. 首先, 用图消息传递网络对图 $G_i$ 计算原子表示 $\{\boldsymbol \mu_v^{G_i}\}$ . 然后使用sum-pooling求得图的表示 $\boldsymbol m_{G_i}=\sum_v \boldsymbol \mu_v^{G_i}$ . 最后, 通过点积函数为这个图打分 $f(G_i) = \sum_{u\in G}\boldsymbol m_{G_i}\cdot \boldsymbol x_u^{\mathcal{G}}$.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;解码器训练过程的损失函数是真值的子图和树中节点(原子团)的对数似然函数:
 $$
-\mathcal{L}&lt;em&gt;g(G) = \sum_i\left[ f(G_i)-\log\sum&lt;/em&gt;{G_i&amp;rsquo;\in\mathcal{G}_i}exp(f(G_i&amp;rsquo;)) \right]
+\mathcal L_g(G) = \sum_i\left[ f(G_i)-\log\sum_{G_i&amp;rsquo;\in\mathcal G_i}exp(f(G_i&amp;rsquo;)) \right]
 $$&lt;/p&gt;
 &lt;h3 id=&#34;多模态图-图翻译&#34;&gt;多模态图-图翻译&lt;/h3&gt;
 &lt;h4 id=&#34;变分junction-tree编码-解码器vjtnn&#34;&gt;变分Junction tree编码-解码器(VJTNN)&lt;/h4&gt;
@@ -143,7 +146,7 @@ $$&lt;/p&gt;
 &lt;h2 id=&#34;个人感受&#34;&gt;个人感受&lt;/h2&gt;
 &lt;p&gt;这篇文章的模型实在是太过复杂, 已经读了两三天了, 但是依然感觉有一些雾里看花. 一个很模糊的点是模型提出的动机, 例如: 如何解决文章开头提到的多模态图生成问题. 为什么要用编码器解码器这样的结构? 为什么要使用junction tree这样的有序树结构来表示无序的图? 为什么要联合树和图一起编码?&lt;/p&gt;
 &lt;p&gt;个人认为其中缺乏很多解释, 更多的是搭建一个如何能完成这个任务的模型, 试想我们把化学分子换成蛋白质结构的空间距离图, 是不是也能用? 如果这样的话那究竟它编码的过程都&amp;quot;学&amp;quot;到了什么呢? 我认为作者应该更多解释一下如何从数据上刻画分子表示, 根据什么想法设计模型, 而非大量篇幅描述复杂的模型, 但模型某模块为什么加入. 这样我认为即使有好的结果也很难去解释为什么好. 虽然我看在Table2里,本文提出的结果似乎并没有比前人工作好多少, 甚至似乎都没有超出随机波动 (QED success提升2.5%, diversity提高0.045, novelty并没有提高. 第二个任务每一项指标都提高小于1个百分点). 另, 相比于VSeq2Seq模型直接翻译分子间的SMILES, 复杂性提升很多的模型却没有带来显著的性能提升, 是否应该有一些思考.&lt;/p&gt;
-&lt;p&gt;另外, 我的前导师崔老师教导我, 写公式的时候不到万不得已千万不要用连续下表, 比如 $i_{j_k}$, 很容易让读者迷惑. 我真真切切感受到了. 这些复杂的表示其实换一种想法完全可以省略, 比如 $\boldsymbol{\nu}_{uv}^{(t)}$, 完全可以并入公式 (2) 中. 感觉文章写完, 希腊字母似乎都被用光了. 这也可能是化生学科和计算机学科之间在认知上的鸿沟吧!&lt;/p&gt;
+&lt;p&gt;另外, 我的前导师崔老师教导我, 写公式的时候不到万不得已千万不要用连续下表, 比如 $i_{j_k}$, 很容易让读者迷惑. 我真真切切感受到了. 这些复杂的表示其实换一种想法完全可以省略, 比如 $\boldsymbol \nu_{uv}^{(t)}$, 完全可以并入公式 (2) 中. 感觉文章写完, 希腊字母似乎都被用光了. 这也可能是化生学科和计算机学科之间在认知上的鸿沟吧!&lt;/p&gt;
 &lt;p&gt;综上, 这篇文章咬牙看完, 看到最后结果汇总并和基线模型差距不大甚至无法超越的时候, 突然就丧失了一半继续写下去的动力, 然后转身去看代码, 发现代码是Python 2.7 + pytorch 0.4 + rdkit 2017.09! 不说别的, 这个环境配起来确实不是很方便, 至此, 丧失了另一半写下去的动力.&lt;/p&gt;
 &lt;p&gt;如果以后有机会/需求的时候, 再接着这里写完吧!&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
@@ -340,17 +343,7 @@ $$
                     <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">The process is seeded with $N$ vectors &amp;hellip;
- From Constrained Graph Variational Autoencoders for Molecule Design
- GNNs follow a neighborhood aggregation scheme, where the representation vector of a node is computed by recursively aggregating and trans- forming representation vectors of its neighboring nodes.
-  Recently, there has been a surge of interest in Graph Neural Network (GNN) approaches for representation learning of graphs.
- From How Powerful Are Graph Neural Networks?
- Since molecules can be optimized in different ways, there are multiple viable translations for each input graph.
- From Learning Multimodal Graph to Graph Translation for Molecular Optimization
- &amp;hellip; converge to brittle solutions
- From Ankesh Anand&amp;rsquo;s blog
- The goal of drug discovery is to design molecules with desirable chemical properties. The task is challenging since the chemical space is vast and often difficult to navigate.
- From Learning Multimodal Graph to Graph Translation for Molecular Optimization</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">The process is seeded with $N$ vectors &amp;hellip; From Constrained Graph Variational Autoencoders for Molecule Design GNNs follow a neighborhood aggregation scheme, where the representation vector of a node is computed by recursively aggregating and trans- forming representation vectors of its neighboring nodes. Recently, there has been a surge of interest in Graph Neural Network (GNN) approaches for representation learning of graphs. From How Powerful Are Graph Neural Networks? Since molecules can be optimized in different ways, there are multiple viable translations for each input graph. From Learning Multimodal Graph to Graph Translation for Molecular Optimization &amp;hellip; converge to brittle solutions From Ankesh Anand&amp;rsquo;s blog The goal of drug discovery is to design molecules with desirable chemical properties. The task is challenging since the chemical space is vast and often difficult to navigate. From Learning Multimodal Graph to Graph Translation for Molecular Optimization</summary>
             
                 <content type="html">&lt;blockquote&gt;
 &lt;p&gt;The process is &lt;strong&gt;seeded with&lt;/strong&gt; $N$ vectors &amp;hellip;&lt;/p&gt;
@@ -521,15 +514,9 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
                     <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">这是一个一级标题 这是一个二级标题 数学公式 简单公式$A+B=C$这是行内公式 $$ a^2 + b^2 = c^2$$
-$$x=\frac{-b\pm\sqrt{4ac}}{2a}$$ 复杂公式 $$ \begin{aligned} \mathcal{L} ( \mu ,\sigma^2 ) &amp;amp;= \prod_{i = 1}^n \left\lbrace \frac{1}{\sqrt{2 \pi} \sigma } \text{exp} \left\lbrace - \frac{( x_i - \mu)^2}{2 \sigma^2}\right\rbrace \right\rbrace ,\\
-&amp;amp;= (2 \pi \sigma^2)^{- \frac{n}{2}} \text{exp} \left\lbrace - \frac{1}{2 \sigma^2} \sum_{i = 1}^{n} (x_i - \mu)^2 \right\rbrace . \end{aligned} $$
-公式作为TOC项目 $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ 一元二次方程解的公式$x= \frac{-b\pm\sqrt{4ac}}{2a}$
-化学式$\ce{H3O+}$ $\ce{[AgCl2]-}$
-$\ce{NaOH(aq,$\infty$)}$
-$\ce{Hg^2+ -&amp;gt;[I-] $\underset{\mathrm{red}}{\ce{HgI2}}$ -&amp;gt;[I-] $\underset{\mathrm{red}}{\ce{[Hg^{II}I4]^2-}}$}$
-Emoji 🌶💉🔟🐮🍺
-代码块 1 2 3 4 5  class Foo(object): def __init__(self, bar): self.foo = bar def print(): print(f&amp;#34;this is {self.foo}&amp;#34;)   </summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">这是一个一级标题 这是一个二级标题 数学公式 简单公式$A+B=C$这是行内公式 $$ a^2 + b^2 = c^2$$ $$x=\frac{-b\pm\sqrt{4ac}}{2a}$$ 复杂公式 $$ \begin{aligned} \mathcal{L} ( \mu ,\sigma^2 ) &amp;amp;= \prod_{i = 1}^n \left\lbrace \frac{1}{\sqrt{2 \pi} \sigma } \text{exp} \left\lbrace - \frac{( x_i - \mu)^2}{2 \sigma^2}\right\rbrace \right\rbrace ,\\ &amp;amp;= (2 \pi \sigma^2)^{- \frac{n}{2}} \text{exp} \left\lbrace - \frac{1}{2 \sigma^2} \sum_{i = 1}^{n} (x_i - \mu)^2 \right\rbrace . \end{aligned} $$ 公式作为TOC项目 $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ $x=\frac{-b\pm\sqrt{4ac}}{2a}$ 一元二次方程解的公式$x= \frac{-b\pm\sqrt{4ac}}{2a}$ 化学式$\ce{H3O+}$ $\ce{[AgCl2]-}$ $\ce{NaOH(aq,$\infty$)}$ $\ce{Hg^2+ -&amp;gt;[I-] $\underset{\mathrm{red}}{\ce{HgI2}}$ -&amp;gt;[I-] $\underset{\mathrm{red}}{\ce{[Hg^{II}I4]^2-}}$}$ Emoji 🌶💉🔟🐮🍺 代码
+    
+    </summary>
             
                 <content type="html">&lt;h1 id=&#34;这是一个一级标题&#34;&gt;这是一个一级标题&lt;/h1&gt;
 &lt;h2 id=&#34;这是一个二级标题&#34;&gt;这是一个二级标题&lt;/h2&gt;
