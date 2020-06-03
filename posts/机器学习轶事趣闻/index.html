@@ -52,7 +52,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2020-06-01T21:18:25+08:00",
-        "dateModified": "2020-06-01T22:06:55+08:00",
+        "dateModified": "2020-06-03T12:33:15+08:00",
         "url": "https://minys233.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BD%B6%E4%BA%8B%E8%B6%A3%E9%97%BB/",
         "headline": "机器学习轶事趣闻",
         "description": "记录一些有意思且有意义的机器学习领域的奇闻异事, 或许能为我平白无奇的研究找些乐子.",
@@ -102,7 +102,7 @@
 <meta property="og:locale" content="en" /><meta property="og:image" content="https://people.eecs.berkeley.edu/~efros/img/malik_gelato.jpg" />
 <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2020-06-01T21:18:25&#43;08:00" />
-    <meta property="article:modified_time" content="2020-06-01T22:06:55&#43;08:00" />
+    <meta property="article:modified_time" content="2020-06-03T12:33:15&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -271,7 +271,7 @@ code.has-jax {
     
     
         
-        <time datetime="2020-06-01T22:06:55&#43;08:00" class="post-meta-item modified"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.6.1</time>
+        <time datetime="2020-06-03T12:33:15&#43;08:00" class="post-meta-item modified"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.6.3</time>
     
     
     
@@ -308,7 +308,7 @@ code.has-jax {
 <p><em>&ldquo;If, by the first day of autumn (Sept 23) of 2015, a method will exist that can match or beat the performance of R-CNN on Pascal VOC detection, without the use of any extra, human annotations (e.g. ImageNet) as pre-training, Mr. Malik promises to buy Mr. Efros one (1) gelato (2 scoops: one chocolate, one vanilla).&quot;</em></p>
 <p><em>&ldquo;如果, 在2015年秋天的第一天前 (2015年9月23日), 在不适用任何额外的, 人工标注数据 (如 ImageNet) 的预训练下, 出现一种方法能够在Pascal VOC检测任务性能上追平或击败R-CNN的话, Malik先生允诺为Efros先生买一个 glato (一种意大利冰淇淋), 冰淇淋有两个球, 一个巧克力味, 一个香草味. &ldquo;</em></p>
 <p>打这个赌的背景故事如下. R-CNN在CVPR 2014上被提出, 并在PASCAL VOC检测任务上拥有令人印象深刻的性能. 我认为这是计算机视觉社区中比较怀疑深度学习的成员 (包括我自己) 最终拥抱深度学习的关键时刻. 然而, 这其中还有一个难题: 据称, PASCAL VOC数据量太小, 无法从头训练出一个卷积网络, 因此, 网络不得不现在ImageNet上预训练, 然后在PASCAL上微调 (fine-tune). 这对我来说很是奇怪: PASCAL和ImageNet数据集是差异很大的数据集, 其中的标签集和重点完全不同&hellip; 为什么在已个数据集上训练会有利于另一个数据集上的性能呢? 那天下午在Nefli喝咖啡的时候, 我提出或许网络并不需要ImageNet的标签, 而仅仅需要图像用以预训练. 说穿了, 我想要回答的科学问题是: 学习好的表示需要语义监督吗? (does one need semantic supervision to learn a good representation?) 于是, Gelato Bet诞生了. 为了吸引其他的研究者参与这个赌局中来, 我承诺将分享我的glato冰淇淋给那些帮助我赢得这场赌局的研究团队.</p>
-<p>显而易见, 我输了, 即使是5年过去了, 我们依然没能够超越ImageNet预训练后的模型在PASCAL VOC任务上的性能 (虽然有几种方法距离超越仅一步之遥). 事实上, PASCAL任务需要预训练这个假定很可能一开始就是<a href="https://arxiv.org/abs/1708.01241" target="_blank" rel="noopener">有问题的</a>. 另一方面, 这个赌局对我们现在称之为的&quot;自监督学习&quot;在ICCV'15上的提出可能弃了一定作用. 最后, 这件事给我上了宝贵的一课: 和自己导师打赌前一定要三思而后行!</p>
+<p>显而易见, 我输了, 即使是5年过去了, 我们依然没能够超越ImageNet预训练后的模型在PASCAL VOC任务上的性能 (虽然有几种方法距离超越仅一步之遥). 事实上, PASCAL任务需要预训练这个假定很可能一开始就是<a href="https://arxiv.org/abs/1708.01241" target="_blank" rel="noopener">有问题的</a>. 另一方面, 这个赌局对我们现在称之为的&quot;自监督学习&quot;在ICCV'15上的提出可能起了一定作用. 最后, 这件事给我上了宝贵的一课: 和自己导师打赌前一定要三思而后行!</p>
 <p><em><a href="https://people.eecs.berkeley.edu/~efros/" target="_blank" rel="noopener">Alyosha Efros</a>
 Berkeley, CA
 2019年3月</em></p>
@@ -341,9 +341,9 @@ Berkeley, CA
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2020-06-01 22:06:55 CST" style="cursor:help">
+        <span title="Updated @ 2020-06-03 12:33:15 CST" style="cursor:help">
 
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-06-01</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-06-01</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-06-03</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-06-03</text></g></svg>
         </span></div>
 
 
@@ -482,7 +482,7 @@ Berkeley, CA
             
     <footer id="footer" class="footer">
         <div class="footer-inner">
-            <div class="site-info">©&nbsp;2020–2020&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;Minys</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+            <div class="site-info">©&nbsp;2020–2020&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;Minys</div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div><div class="custom-footer"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=58zyjf5y0q4&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=trebuchet_ms&amp;l=49" async="async"></script></div>
 
             
     
