@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Minys&#39;s blog</title>
     <subtitle type="html">Minys&#39;s blog - Record my ordinary life</subtitle>
-    <updated>2020-06-03T12:33:35&#43;08:00</updated>
+    <updated>2020-06-22T22:30:06&#43;08:00</updated>
     <id>https://minys233.github.io/</id>
     <link rel="alternate" type="text/html" href="https://minys233.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://minys233.github.io/atom.xml" />
@@ -509,7 +509,7 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
             <title type="text">功能测试</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/test-my-site/" />
             <id>https://minys233.github.io/posts/test-my-site/</id>
-            <updated>2020-05-21T20:05:18&#43;08:00</updated>
+            <updated>2020-06-22T20:22:55&#43;08:00</updated>
             <published>2020-05-19T18:49:55&#43;00:00</published>
             <author>
                     <name>Minys</name>
@@ -562,7 +562,19 @@ $$&lt;/p&gt;
       &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;this is {self.foo}&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content>
+&lt;/div&gt;&lt;h2 id=&#34;mermaid&#34;&gt;Mermaid&lt;/h2&gt;
+
+&lt;div class=&#34;mermaid&#34; align=&#34;center&#34;&gt; 
+    
+graph LR;
+	A[Hard edge] --&gt;|Link text| B(Round edge)
+    B --&gt; C{Decision}
+    C --&gt;|One| D[Result one]
+    C --&gt;|Two| E[Result two]
+
+&lt;/div&gt;&lt;span class=&#34;caption&#34;&gt;👉 This is a flowchart&lt;/span&gt;
+&lt;p&gt;通过shortcode的设置, 当允许图表图例时, 可以通过接收caption参数为mermaid图表加上图例. 但注意要在前后加上空行, 不然这一段就和图表处在同一段了!&lt;/p&gt;
+</content>
             
             
             
