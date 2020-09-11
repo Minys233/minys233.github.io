@@ -21,9 +21,9 @@
             <webMaster>minys@foxmail.com (Minys)</webMaster>
         
         
-            <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+            <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 22 Jun 2020 22:30:06 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sat, 12 Sep 2020 01:35:55 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://minys233.github.io/rss.xml" />
         
@@ -36,7 +36,7 @@
                 
                     <author>minys@foxmail.com (Minys)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
                     <description>&lt;h2 id=&#34;the-gelato-bet&#34;&gt;The Gelato Bet&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;本节翻译自&lt;a href=&#34;https://people.eecs.berkeley.edu/~efros/gelato_bet.html&#34;&gt;The Gelato Bet&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
@@ -87,7 +87,7 @@ Berkeley, CA
                 
                     <author>minys@foxmail.com (Minys)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
                     <description>&lt;h2 id=&#34;论文简述&#34;&gt;论文简述&lt;/h2&gt;
 &lt;p&gt;药物发现的目标是设计具有特定期望的化学性质的分子.  这个任务很具有挑战性, 因为化学空间是巨大的且难于探索. 一个解决该问题的流行的方法使匹配分子对分析 (MMPA). 通过学习&amp;quot;分子释义&amp;rdquo;, 来提升化合物特定的性质. 这与机器翻译的策略很相似: MMPA输入一个分子对 $\{(X, Y)\}$, 其中 $Y$ 看做是 $X$ 的释义/含义, 并具有更好的化学性质. 然而现有的MMPA方法将分子对提炼为图转化 (graph transformation) 问题, 而非更普适的图之间的翻译问题.&lt;/p&gt;
@@ -216,7 +216,7 @@ $$&lt;/p&gt;
                 
                     <author>minys@foxmail.com (Minys)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
                     <description>&lt;h2 id=&#34;preliminary&#34;&gt;Preliminary&lt;/h2&gt;
 &lt;h3 id=&#34;the-weisfeiler-lehman-isomorphism-test&#34;&gt;The Weisfeiler-Lehman Isomorphism Test&lt;/h3&gt;
@@ -343,7 +343,7 @@ $$
                 
                     <author>minys@foxmail.com (Minys)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
                     <description>&lt;blockquote&gt;
 &lt;p&gt;The process is &lt;strong&gt;seeded with&lt;/strong&gt; $N$ vectors &amp;hellip;&lt;/p&gt;
@@ -406,7 +406,7 @@ $$
                 
                     <author>minys@foxmail.com (Minys)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
                     <description>&lt;h2 id=&#34;问题提出&#34;&gt;问题提出&lt;/h2&gt;
 &lt;p&gt;文章首先提出迁移学习在CV与NLP中已经应用广泛了，但在图数据上相应的预训练的工作还比较少。预训练主要解决目前图数据集的两个问题：&lt;/p&gt;
@@ -508,7 +508,7 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
                 
                     <author>minys@foxmail.com (Minys)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
                     <description>&lt;h1 id=&#34;这是一个一级标题&#34;&gt;这是一个一级标题&lt;/h1&gt;
 &lt;h2 id=&#34;这是一个二级标题&#34;&gt;这是一个二级标题&lt;/h2&gt;
@@ -564,6 +564,7 @@ graph LR;
 
 &lt;/div&gt;&lt;span class=&#34;caption&#34;&gt;👉 This is a flowchart&lt;/span&gt;
 &lt;p&gt;通过shortcode的设置, 当允许图表图例时, 可以通过接收caption参数为mermaid图表加上图例. 但注意要在前后加上空行, 不然这一段就和图表处在同一段了!&lt;/p&gt;
+&lt;p&gt;$*\mathbf{A} \in \mathbb{R}^{B\times N \times N}*$&lt;/p&gt;
 </description>
                 
                 

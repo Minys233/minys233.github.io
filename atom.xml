@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Minys&#39;s blog</title>
     <subtitle type="html">Minys&#39;s blog - Record my ordinary life</subtitle>
-    <updated>2020-06-22T22:30:06&#43;08:00</updated>
+    <updated>2020-09-12T01:35:55&#43;08:00</updated>
     <id>https://minys233.github.io/</id>
     <link rel="alternate" type="text/html" href="https://minys233.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://minys233.github.io/atom.xml" />
@@ -14,7 +14,7 @@
             
                 <email>minys@foxmail.com</email>
             </author>
-    <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
+    <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.72.0-DEV">Hugo</generator>
         <entry>
             <title type="text">机器学习轶事趣闻</title>
@@ -27,7 +27,7 @@
                     <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">记录一些有意思且有意义的机器学习领域的奇闻异事, 或许能为我平白无奇的研究找些乐子.</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">记录一些有意思且有意义的机器学习领域的奇闻异事, 或许能为我平白无奇的研究找些乐子.</summary>
             
                 <content type="html">&lt;h2 id=&#34;the-gelato-bet&#34;&gt;The Gelato Bet&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;本节翻译自&lt;a href=&#34;https://people.eecs.berkeley.edu/~efros/gelato_bet.html&#34;&gt;The Gelato Bet&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
@@ -81,7 +81,7 @@ Berkeley, CA
                     <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">读后总结, 刊于ICLR 2019</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">读后总结, 刊于ICLR 2019</summary>
             
                 <content type="html">&lt;h2 id=&#34;论文简述&#34;&gt;论文简述&lt;/h2&gt;
 &lt;p&gt;药物发现的目标是设计具有特定期望的化学性质的分子.  这个任务很具有挑战性, 因为化学空间是巨大的且难于探索. 一个解决该问题的流行的方法使匹配分子对分析 (MMPA). 通过学习&amp;quot;分子释义&amp;rdquo;, 来提升化合物特定的性质. 这与机器翻译的策略很相似: MMPA输入一个分子对 $\{(X, Y)\}$, 其中 $Y$ 看做是 $X$ 的释义/含义, 并具有更好的化学性质. 然而现有的MMPA方法将分子对提炼为图转化 (graph transformation) 问题, 而非更普适的图之间的翻译问题.&lt;/p&gt;
@@ -206,14 +206,14 @@ $$&lt;/p&gt;
             <title type="text">How Powerful Are Graph Neural Networks?</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/how-powerful-are-graph-neural-networks/" />
             <id>https://minys233.github.io/posts/how-powerful-are-graph-neural-networks/</id>
-            <updated>2020-06-01T22:41:40&#43;08:00</updated>
+            <updated>2020-09-12T01:30:31&#43;08:00</updated>
             <published>2020-05-20T20:59:03&#43;08:00</published>
             <author>
                     <name>Minys</name>
                     <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">读后总结, 刊于ICLR 2019</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">读后总结, 刊于ICLR 2019</summary>
             
                 <content type="html">&lt;h2 id=&#34;preliminary&#34;&gt;Preliminary&lt;/h2&gt;
 &lt;h3 id=&#34;the-weisfeiler-lehman-isomorphism-test&#34;&gt;The Weisfeiler-Lehman Isomorphism Test&lt;/h3&gt;
@@ -343,9 +343,7 @@ $$
                     <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">The process is seeded with $N$ vectors &amp;hellip; From Constrained Graph Variational Autoencoders for Molecule Design GNNs follow a neighborhood aggregation scheme, where the representation vector of a node is computed by recursively aggregating and trans- forming representation vectors of its neighboring…
-    
-    </summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">The process is seeded with $N$ vectors &amp;hellip; From Constrained Graph Variational Autoencoders for Molecule Design GNNs follow a neighborhood aggregation scheme, where the representation vector of a node is computed by recursively aggregating and trans- forming representation vectors of its neighboring…</summary>
             
                 <content type="html">&lt;blockquote&gt;
 &lt;p&gt;The process is &lt;strong&gt;seeded with&lt;/strong&gt; $N$ vectors &amp;hellip;&lt;/p&gt;
@@ -411,7 +409,7 @@ $$
                     <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">读后总结，刊于ICLR 2020</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">读后总结，刊于ICLR 2020</summary>
             
                 <content type="html">&lt;h2 id=&#34;问题提出&#34;&gt;问题提出&lt;/h2&gt;
 &lt;p&gt;文章首先提出迁移学习在CV与NLP中已经应用广泛了，但在图数据上相应的预训练的工作还比较少。预训练主要解决目前图数据集的两个问题：&lt;/p&gt;
@@ -509,16 +507,14 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
             <title type="text">功能测试</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/test-my-site/" />
             <id>https://minys233.github.io/posts/test-my-site/</id>
-            <updated>2020-06-22T20:22:55&#43;08:00</updated>
+            <updated>2020-08-01T12:27:36&#43;08:00</updated>
             <published>2020-05-19T18:49:55&#43;00:00</published>
             <author>
                     <name>Minys</name>
                     <uri>blog.minys.online</uri>
                     <email>minys@foxmail.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">这是一个一级标题 这是一个二级标题 数学公式 简单公式$A+B=C$这是行内公式 $$ a^2 + b^2 =…
-    
-    </summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">这是一个一级标题 这是一个二级标题 数学公式 简单公式$A+B=C$这是行内公式 $$ a^2 + b^2 =…</summary>
             
                 <content type="html">&lt;h1 id=&#34;这是一个一级标题&#34;&gt;这是一个一级标题&lt;/h1&gt;
 &lt;h2 id=&#34;这是一个二级标题&#34;&gt;这是一个二级标题&lt;/h2&gt;
@@ -574,6 +570,7 @@ graph LR;
 
 &lt;/div&gt;&lt;span class=&#34;caption&#34;&gt;👉 This is a flowchart&lt;/span&gt;
 &lt;p&gt;通过shortcode的设置, 当允许图表图例时, 可以通过接收caption参数为mermaid图表加上图例. 但注意要在前后加上空行, 不然这一段就和图表处在同一段了!&lt;/p&gt;
+&lt;p&gt;$*\mathbf{A} \in \mathbb{R}^{B\times N \times N}*$&lt;/p&gt;
 </content>
             
             

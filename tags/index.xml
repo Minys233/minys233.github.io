@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Minys&#39;s blog</title>
+    <link>https://minys233.github.io/tags/</link>
+    <description>Recent content in Tags on Minys&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>minys@foxmail.com (Minys)</managingEditor>
+    <webMaster>minys@foxmail.com (Minys)</webMaster>
+    <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+    <lastBuildDate>Mon, 01 Jun 2020 21:18:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://minys233.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://minys233.github.io/tags/machine-learning/</link>
+      <pubDate>Mon, 01 Jun 2020 21:18:25 +0800</pubDate>
+      <author>minys@foxmail.com (Minys)</author>
+      <guid>https://minys233.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graph Auto Encoder (GAE)</title>
+      <link>https://minys233.github.io/tags/graph-auto-encoder-gae/</link>
+      <pubDate>Thu, 28 May 2020 22:52:13 +0800</pubDate>
+      <author>minys@foxmail.com (Minys)</author>
+      <guid>https://minys233.github.io/tags/graph-auto-encoder-gae/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>未完成</title>
+      <link>https://minys233.github.io/tags/%E6%9C%AA%E5%AE%8C%E6%88%90/</link>
+      <pubDate>Thu, 28 May 2020 22:52:13 +0800</pubDate>
+      <author>minys@foxmail.com (Minys)</author>
+      <guid>https://minys233.github.io/tags/%E6%9C%AA%E5%AE%8C%E6%88%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graph Neural Network (GNN)</title>
+      <link>https://minys233.github.io/tags/graph-neural-network-gnn/</link>
+      <pubDate>Wed, 20 May 2020 20:59:03 +0800</pubDate>
+      <author>minys@foxmail.com (Minys)</author>
+      <guid>https://minys233.github.io/tags/graph-neural-network-gnn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Academic Writing</title>
+      <link>https://minys233.github.io/tags/academic-writing/</link>
+      <pubDate>Wed, 20 May 2020 15:30:54 +0800</pubDate>
+      <author>minys@foxmail.com (Minys)</author>
+      <guid>https://minys233.github.io/tags/academic-writing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>测试</title>
+      <link>https://minys233.github.io/tags/%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Tue, 19 May 2020 18:49:55 +0000</pubDate>
+      <author>minys@foxmail.com (Minys)</author>
+      <guid>https://minys233.github.io/tags/%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Minys&#39;s blog</title>
+    <link>https://minys233.github.io/categories/</link>
+    <description>Recent content in Categories on Minys&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>minys@foxmail.com (Minys)</managingEditor>
+    <webMaster>minys@foxmail.com (Minys)</webMaster>
+    <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+    <lastBuildDate>Mon, 01 Jun 2020 21:18:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://minys233.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>杂记</title>
+      <link>https://minys233.github.io/categories/%E6%9D%82%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jun 2020 21:18:25 +0800</pubDate>
+      <author>minys@foxmail.com (Minys)</author>
+      <guid>https://minys233.github.io/categories/%E6%9D%82%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>文献阅读</title>
+      <link>https://minys233.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Thu, 28 May 2020 22:52:13 +0800</pubDate>
+      <author>minys@foxmail.com (Minys)</author>
+      <guid>https://minys233.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>随便写写</title>
+      <link>https://minys233.github.io/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/</link>
+      <pubDate>Tue, 19 May 2020 18:49:55 +0000</pubDate>
+      <author>minys@foxmail.com (Minys)</author>
+      <guid>https://minys233.github.io/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
