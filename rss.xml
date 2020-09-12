@@ -10,7 +10,7 @@
         <title>Minys&#39;s blog</title>
         <link>https://minys233.github.io/</link>
         <description>Minys&#39;s blog - Record my ordinary life</description>
-        <generator>Hugo 0.72.0-DEV https://gohugo.io/</generator>
+        <generator>Hugo 0.74.3 https://gohugo.io/</generator>
         
             <language>en</language>
         
@@ -23,10 +23,157 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Sat, 12 Sep 2020 01:35:55 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sun, 13 Sep 2020 02:08:45 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://minys233.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Javascript学习笔记 (1)</title>
+                <link>https://minys233.github.io/posts/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</link>
+                <guid isPermaLink="true">https://minys233.github.io/posts/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</guid>
+                <pubDate>Sun, 13 Sep 2020 00:15:18 &#43;0800</pubDate>
+                
+                    <author>minys@foxmail.com (Minys)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h2 id=&#34;写在前面&#34;&gt;写在前面&lt;/h2&gt;
+&lt;p&gt;为什么要学习JS呢? 对我来说, 日常科研工作中有很多场景都需要和互联网, 尤其是前端打交道. 比如:文献制图, 数据可视化, 训练监控, 维护博客等等. 在这些过程中有很多端到端的工具可以使用, 但也仅仅是停留在&amp;quot;使用&amp;rdquo;. 有时出现错误或新增内容时, 总要写点新东西或者整合一些JS库. 每到这时, 总是会触及到我的知识盲区, 即&amp;quot;明明知道用JS可以轻松解决但就是不会&amp;rdquo;. 列举几个让我十分沮丧的时刻:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本科时每学期评教, 要选中页面中所有特定的单选框&lt;/li&gt;
+&lt;li&gt;咪咕音乐PC端仅提供网页应用, 或许可以使用Electron打包成APP&lt;/li&gt;
+&lt;li&gt;Clash科学上网, 可以用用HTML+JS可以包装官方简陋的RESTful API&lt;/li&gt;
+&lt;li&gt;Gnome更新后, 某些插件不能用了但无法debug&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此, 我决定在闲暇之时, 抽出时间系统地学一下JS. 但是学归学, 为什么要开这个系列坑呢? 因为之前我已经学过好几次JS了! 每一次要么是疏于练习前学后忘, 要么是没有紧迫需求无法坚持. 我希望这个博问可以督促我每天学一点, 坚持下去.&lt;/p&gt;
+&lt;p&gt;这个系列突出实用, 即默认读者应当已经掌握了一定的编程/互联网基础, 太过基础的和概念并不会占用太多篇幅. 本教程参考&lt;a href=&#34;https://www.liaoxuefeng.com/wiki/1022910821149312&#34;&gt;廖雪峰的教程&lt;/a&gt;编写, 并尽可能短小精悍.&lt;/p&gt;
+&lt;h2 id=&#34;javascript历史简述&#34;&gt;Javascript历史简述&lt;/h2&gt;
+&lt;p&gt;微软等几个大公司在1997年联合制定了&lt;strong&gt;ECMAScript&lt;/strong&gt;标准, Javascript便不断跟进ES标准开发并实现. 如今现代浏览器所支持地最新Javascript标准是于2015年6月发布的ES6版本. 这个ES也正是前述ECMAScript的缩写. 其他的历史不了解也罢, 但是ES标准最好还是了解一下, 因为各种各样的浏览器在执行Javascript时所遵循的标准并不相同, 例如远古的IE6和最新版的Chrome便不同, 前者并不支持ES6标准的Javascript代码, 而且, 即使时最新版的不同浏览器, 如Safari与Firefox, 也会在执行Javascript脚本时有不一样的行为.&lt;/p&gt;
+&lt;h2 id=&#34;基本语法和基本类型&#34;&gt;基本语法和基本类型&lt;/h2&gt;
+&lt;h3 id=&#34;语句和注释&#34;&gt;语句和注释&lt;/h3&gt;
+&lt;p&gt;一个编程语言开始上手首先就要关注它的语法, 基本类型, 这里也不例外. Javascript的语法类似C++或Java, 但却是一个动态类型语言. 其基本的运行单元是语句. 一个语句要以 &lt;code&gt;;&lt;/code&gt; 结尾, 一个语句块要处在 &lt;code&gt;{...}&lt;/code&gt; 中. 但由于某些原因, Javascript并不强制加 &lt;code&gt;;&lt;/code&gt; , 浏览器中JS引擎会自动给没有分号的语句加上分号. 但是有时却会导致预期之外的效果. 因此, &lt;strong&gt;每个语句结尾手动添加分号是良好的代码习惯&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;语句样例:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;s1&#34;&gt;&amp;#39;Hello Javascript!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Javascript中的注释沿用了C风格注释, 即 &lt;code&gt;//&lt;/code&gt; 表示单行注释, &lt;code&gt;\* ... *\&lt;/code&gt;可注释多行.&lt;/p&gt;
+&lt;h3 id=&#34;基本类型&#34;&gt;基本类型&lt;/h3&gt;
+&lt;h4 id=&#34;数字-number&#34;&gt;数字 (Number)&lt;/h4&gt;
+&lt;p&gt;Javascript不区分数字类型, 整数, 浮点统一表示. 数字类型中有两个特殊值&lt;code&gt;NaN&lt;/code&gt;和&lt;code&gt;Infinity&lt;/code&gt;. 其意义见如下注释:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;mi&#34;&gt;123&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 整数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;1.234&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 浮点数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;1.234e5&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 123400的科学计数法
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0xffff00&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 十六进制数, 同对应十进制数值
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;NaN&lt;/span&gt;
+&lt;span class=&#34;cm&#34;&gt;/* 
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;Not a Number, 计算失败时出现NaN. 
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;如Math.sqrt(-1), parseInt(&amp;#34;f*ck&amp;#34;), &amp;#39;a&amp;#39; + 1, 0/0. 
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;详细来说, 无穷大除以无穷大, 给任意负数做开方运算, 
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;或者算数运算符与不是数字或无法转换为数字的操作数一起使用时都将返回NaN. 
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
+&lt;span class=&#34;kc&#34;&gt;Infinity&lt;/span&gt;
+&lt;span class=&#34;cm&#34;&gt;/*
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;无穷, 分为正无穷 (Infinity或+Infinity) 和负无穷 (-Infinity). 
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;它们都比任何数大/小. 对有限数除以0 (区分0/0) 或者超出Number.MAX_VALUE可以
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;得到Infinity, 另外, Infinity参与的四则运算都会得到±Infinity. 
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;但是, 注意: parseInt(&amp;#34;Infinity&amp;#34;, 10) =&amp;gt; NaN,  Math库中某些函数
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;也会返回Infinity, 如:
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;const empty=[]; 
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;Math.max(...empty); ==&amp;gt; Infinity
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;Math.min(...empty); ==&amp;gt; -Infinity
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;字符串&#34;&gt;字符串&lt;/h4&gt;
+&lt;p&gt;字符串使用 &lt;code&gt;&#39;&#39;&lt;/code&gt; 或 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; 包围的任意文本, 如 &lt;code&gt;abc&lt;/code&gt; , &lt;code&gt;&amp;quot;xyz&amp;quot;&lt;/code&gt; .&lt;/p&gt;
+&lt;h4 id=&#34;布尔值&#34;&gt;布尔值&lt;/h4&gt;
+&lt;p&gt;同C/C++, 有 &lt;code&gt;true&lt;/code&gt; , &lt;code&gt;false&lt;/code&gt; 两种值. 对应的布尔运算如下:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 逻辑与
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 逻辑或
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 逻辑非
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;比较运算符&#34;&gt;比较运算符&lt;/h4&gt;
+&lt;p&gt;包含 &lt;code&gt;&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;&lt;/code&gt;, &lt;code&gt;&amp;gt;=&lt;/code&gt;, &lt;code&gt;&amp;lt;=&lt;/code&gt;, &lt;code&gt;==&lt;/code&gt;, &lt;code&gt;===&lt;/code&gt;. 前面四种略去不说, 字如其意. 最后两种比较相等的运算符具有不同的行为, 要特别注意.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;==&lt;/code&gt; : 比较时自动转换类型, 可得到 &lt;code&gt;false == 0&lt;/code&gt; 为 &lt;code&gt;true&lt;/code&gt; 这样的神奇情况&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;===&lt;/code&gt; : 比较时不会转换类型,如果数据类型不一致直接 &lt;code&gt;false&lt;/code&gt;, 类型相同再比较&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;这是Javascript的一个设计缺陷, 尽量避免使用 &lt;code&gt;==&lt;/code&gt;&lt;/strong&gt;. 另外, &lt;code&gt;NaN&lt;/code&gt; 和任何数包括他自己都不想等, 即 &lt;code&gt;NaN === NaN&lt;/code&gt; 将得到 &lt;code&gt;false&lt;/code&gt;, 符合数值运算时约定俗称的规矩.&lt;/p&gt;
+&lt;h4 id=&#34;null-与-undefined&#34;&gt;&lt;code&gt;null&lt;/code&gt; 与 &lt;code&gt;undefined&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;(未完待续)&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://minys233.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://minys233.github.io/tags/javascript/">Javascript</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>机器学习轶事趣闻</title>
@@ -101,8 +248,8 @@ Berkeley, CA
 &lt;h3 id=&#34;树图二合一编码器&#34;&gt;树图二合一编码器&lt;/h3&gt;
 &lt;p&gt;图定义为 $G=(\mathcal{V}, \mathcal{E})$. 图中节点 $v$ 具有特征 $\boldsymbol f_v$ . 对原子来说, 其中包含了原子类型, 化合价等原子性质. 对junction tree中的节点 (文中称cluster),  $\boldsymbol f_v$ 是one-hot向量, 表示其类别. 类似地, 边 $(u,v)\in\mathcal{E}$ 也有对应的特征 $\boldsymbol f_{uv}$. $N(v)$ 表示节点 $v$ 邻居构成的集合. 每条边 $(u,v)$ 有两个隐向量: $\boldsymbol\nu_{uv} , \boldsymbol\nu_{vu}$ , 分别表示两个方向传递的消息. 则消息传递网络通过神经网络 $g_1(\cdot)$ 更新图中边上的消息:&lt;/p&gt;
 &lt;p&gt;$$
-\boldsymbol\nu_{uv}^{(t)}=g_1\left(\boldsymbol f_u,
-\boldsymbol f_{uv}, \sum_{w\in N(u)\backslash v}
+\boldsymbol\nu_{uv}^{(t)}=g_1\left(\boldsymbol f_u, 
+\boldsymbol f_{uv}, \sum_{w\in N(u)\backslash v} 
 \boldsymbol\nu_{wu}^{(t-1)}\right)
 $$&lt;/p&gt;
 &lt;p&gt;其中 $\boldsymbol \nu_{uv}^{(t)}$ 表示第 $t$ 次迭代时边 $(u,v)$ 上的消息, 其初始化为零向量. 图上节点更新顺序是异步的, 即没有预定义的顺序. 在 $T$ 次迭代之后, 我们将图中消息通过神经网络 $g_2(\cdot)$ 聚合, 得到每一个节点的嵌入向量, 其刻画了..图或树中的局部结构..
@@ -127,7 +274,7 @@ $$
 $$
 \boldsymbol c_t^d =  \left[\sum_i \boldsymbol \alpha_{i,t}^{\mathcal{T}}\boldsymbol x_{i}^{\mathcal{T}}, \sum_i \boldsymbol \alpha_{i,t}^{\mathcal{G}}\boldsymbol x_{i}^{\mathcal{G}}\right]
 $$&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;..标签预测..&lt;/strong&gt;. 如果节点 $j_t$ 是 $i_t$ 生成的新节点, 其标签(表明它是何种分子骨架的标签)可以通过下式预测.
+&lt;p&gt;&lt;strong&gt;..标签预测..&lt;/strong&gt;. 如果节点 $j_t$ 是 $i_t$ 生成的新节点, 其标签(表明它是何种分子骨架的标签)可以通过下式预测. 
 $$
 \begin{aligned}
 \boldsymbol c_t^l &amp;amp;=\text{attention}(\boldsymbol h_{i_t,j_t}, {\boldsymbol x_*^{\mathcal{T}}}, {\boldsymbol x_*^{\mathcal{G}}}; \boldsymbol U_{att}^l) \\&lt;br&gt;
