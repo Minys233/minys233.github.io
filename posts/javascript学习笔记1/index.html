@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.74.3" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.75.0-DEV" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -14,7 +14,7 @@
 
     <title>Javascript学习笔记 (1) | Minys&#39;s blog</title>
 
-    <link rel="stylesheet" href="/css/meme.min.52f773805d3c94cd9de0bbe16936d0017d043320fc11f993aa9e48a685552a24.css" integrity="sha256-UvdzgF08lM2d4LvhaTbQAX0EMyD8EfmTqp5IpoVVKiQ=" />
+    <link rel="stylesheet" href="/css/meme.min.5eb57b3e0072c815b379508fc9f8e72b8702b22ca6be8a65b03478412eae2025.css" integrity="sha256-XrV7PgByyBWzeVCPyfjnK4cCsiymvoplsDR4QS6uICU=" />
 
     
     
@@ -54,14 +54,14 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2020-09-13T00:15:18+08:00",
-        "dateModified": "2020-09-14T00:11:16+08:00",
+        "dateModified": "2020-09-16T01:38:58+08:00",
         "url": "https://minys233.github.io/posts/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/",
         "headline": "Javascript学习笔记 (1)",
         "description": "Javascript学习笔记",
         "inLanguage" : "en",
         "articleSection": "posts",
-        "wordCount":  2784 ,
-        "image": "https://minys233.github.io/icons/apple-touch-icon.png",
+        "wordCount":  4471 ,
+        "image": ["https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-09-13-163424.png","https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-09-15-164745.jpg"],
         "author": {
             "@type": "Person",
             "description": "Record my ordinary life",
@@ -89,7 +89,8 @@
 
     
 
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+
 
 
     
@@ -100,10 +101,10 @@
 <meta property="og:description" content="Javascript学习笔记" />
 <meta property="og:url" content="https://minys233.github.io/posts/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" />
 <meta property="og:site_name" content="Minys&#39;s blog" />
-<meta property="og:locale" content="en" /><meta property="og:image" content="https://minys233.github.io/icons/apple-touch-icon.png" />
-    <meta property="og:type" content="article" />
+<meta property="og:locale" content="en" /><meta property="og:image" content="https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-09-13-163424.png" />
+<meta property="og:type" content="article" />
     <meta property="article:published_time" content="2020-09-13T00:15:18&#43;08:00" />
-    <meta property="article:modified_time" content="2020-09-14T00:11:16&#43;08:00" />
+    <meta property="article:modified_time" content="2020-09-16T01:38:58&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -235,7 +236,7 @@
     
     
         
-        <time datetime="2020-09-14T00:11:16&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.9.14</time>
+        <time datetime="2020-09-16T01:38:58&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.9.16</time>
     
     
     
@@ -249,11 +250,11 @@
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;2784</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;4471</span>
     
     
         
-        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;6&nbsp;mins</span>
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;9&nbsp;mins</span>
     
     
     
@@ -271,21 +272,22 @@
         <li><a id="contents:基本类型" href="#基本类型">基本类型</a>
           <ol>
             <li><a id="contents:数字-number" href="#数字-number">数字 (Number)</a></li>
-            <li><a id="contents:字符串" href="#字符串">字符串</a></li>
+            <li><a id="contents:字符串-string" href="#字符串-string">字符串 (String)</a></li>
             <li><a id="contents:布尔值" href="#布尔值">布尔值</a></li>
             <li><a id="contents:比较运算符" href="#比较运算符">比较运算符</a></li>
             <li><a id="contents:null-与-undefined" href="#null-与-undefined"><code>null</code> 与 <code>undefined</code></a></li>
-            <li><a id="contents:数组" href="#数组">数组</a></li>
+            <li><a id="contents:数组-array" href="#数组-array">数组 (Array)</a></li>
             <li><a id="contents:对象" href="#对象">对象</a></li>
             <li><a id="contents:变量" href="#变量">变量</a></li>
           </ol>
         </li>
       </ol>
     </li>
+    <li><a id="contents:阶段总结" href="#阶段总结">阶段总结</a></li>
   </ol>
 </nav><div class="post-body e-content">
               <h2 id="写在前面"><a href="#写在前面" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:写在前面" class="headings">写在前面</a></h2>
-<p>为什么要学习JS呢? 对我来说, 日常科研工作中有很多场景都需要和互联网, 尤其是前端打交道. 比如:文献制图, 数据可视化, 训练监控, 维护博客等等. 在这些过程中有很多端到端的工具可以使用, 但也仅仅是停留在&quot;使用&rdquo;. 有时出现错误或新增内容时, 总要写点新东西或者整合一些JS库. 每到这时, 总是会触及到我的知识盲区, 即&quot;明明知道用JS可以轻松解决但就是不会&rdquo;. 列举几个让我十分沮丧的时刻:</p>
+<p>为什么要学习JS呢? 对我来说, 日常科研工作中有很多场景都需要和互联网, 尤其是前端打交道. 比如:文献制图, 数据可视化, 训练监控, 维护博客等等. 在这些过程中有很多端到端的工具可以使用, 但也仅仅是停留在&quot;使用&quot;. 有时出现错误或新增内容时, 总要写点新东西或者整合一些JS库. 每到这时, 总是会触及到我的知识盲区, 即&quot;明明知道用JS可以轻松解决但就是不会&quot;. 列举几个让我十分沮丧的时刻:</p>
 <ul>
 <li>本科时每学期评教, 要选中页面中所有特定的单选框</li>
 <li>咪咕音乐PC端仅提供网页应用, 或许可以使用Electron打包成APP</li>
@@ -366,7 +368,7 @@
 </span><span class="cm">*/</span>
 </code></pre></td></tr></table></div>
 </div>
-</div><h4 id="字符串"><a href="#字符串" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:字符串" class="headings">字符串</a></h4>
+</div><h4 id="字符串-string"><a href="#字符串-string" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:字符串-string" class="headings">字符串 (String)</a></h4>
 <p>字符串使用 <code>''</code> 或 <code>&quot;&quot;</code> 包围的任意文本, 如 <code>abc</code> , <code>&quot;xyz&quot;</code> .  字符转义与其他语言完全一致, 如 <code>'I\'m Yaosen!\n'</code>. 另外,也可以使用十六进制数 <code>'\x##'</code> 表示字符串中的字符, 如 <code>'\x41bc' === 'Abc'</code>. 也可以用 <code>'\u####'</code> 表示字符串中的一个Unicode字符, 如 <code>'\u4e2d\u6587' === '中文'</code>.</p>
 <p>如果字符串很长, 写换行符会很烦, 可以使用ES6新标准中的多行字符串表示方法, 用<code>`...`</code> 括住即可. 同时, 反引号字符串也可以当作模板字符串将变量嵌入至字符串中, 而不用写很多+号.</p>
 <div class="highlight"><div class="chroma">
@@ -393,7 +395,25 @@
 <span class="c1">// message3 === &#34;Hello, I&#39;m Yaosen,\nI&#39;m 24 years old.&#34;
 </span></code></pre></td></tr></table></div>
 </div>
-</div><h4 id="布尔值"><a href="#布尔值" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:布尔值" class="headings">布尔值</a></h4>
+</div><p>字符串对象的操作类似列表. 通过 <code>.length</code> 获得长度, 通过方括号索引获取对应字符. 但是修改 <code>.length</code> 虽不会报错, 但是并不能更改字符串长度, 属性值也不会改变. <strong>字符串是不可变的, 对索引赋值不会有任何效果.</strong></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">&#34;Hellw!&#34;</span><span class="p">;</span> <span class="c1">// mis-spelled
+</span><span class="c1"></span><span class="nx">s</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">;</span> <span class="c1">// no effect
+</span></code></pre></td></tr></table></div>
+</div>
+</div><p>个人认为, 字符串操作的丰富与否直接决定了一个语言是否对新手友好, 因为如果打log都很不是很容易, 那么学习曲线就会很陡峭. 因此, 易于学习的Javascript字符串对象有不少成员函数来操作字符串:</p>
+<ul>
+<li><code>s.toUpperCase()</code> : 全部大写, 仅对有大小写关系的字符有效.</li>
+<li><code>s.toLowerCase()</code> : 全部小写, 仅对有大小写关系的字符有效.</li>
+<li><code>s.indexOf(str)</code> : 返回指定 <code>str</code> 字符串出现的位置, 没找到返回-1.</li>
+<li><code>s.substring(start, end)</code> : 返回 <code>[start, end)</code> 区间的子字符串, 如 <code>end</code> 未指定, 默认到字符串结尾.</li>
+</ul>
+<h4 id="布尔值"><a href="#布尔值" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:布尔值" class="headings">布尔值</a></h4>
 <p>同C/C++, 有 <code>true</code> , <code>false</code> 两种值. 对应的布尔运算如下:</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
@@ -413,11 +433,11 @@
 <li><code>==</code> : 比较时自动转换类型, 可得到 <code>false == 0</code> 为 <code>true</code> 这样的神奇情况</li>
 <li><code>===</code> : 比较时不会转换类型,如果数据类型不一致直接 <code>false</code>, 类型相同再比较</li>
 </ul>
-<p><strong>这是Javascript的一个设计缺陷, 尽量避免使用 <code>==</code></strong>. 另外, <code>NaN</code> 和任何数包括他自己都不想等, 即 <code>NaN === NaN</code> 将得到 <code>false</code>, 符合数值运算时约定俗称的规矩.</p>
+<p><strong>这是Javascript的一个设计缺陷, 尽量避免使用 <code>==</code></strong>. 另外, <code>NaN</code> 和任何数包括他自己都不想等, 即 <code>NaN === NaN</code> 将得到 <code>false</code>, 符合数值运算时约定俗称的规矩. 实际上, <code>===</code> 当且仅当两边的对象指向相同的数据, 如 <code>new Number(0) === new Number(0);</code> 为 <code>false</code>.</p>
 <h4 id="null-与-undefined"><a href="#null-与-undefined" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:null-与-undefined" class="headings"><code>null</code> 与 <code>undefined</code></a></h4>
 <p><code>null</code> 表示空 (void) 之意, 类似C中的 <code>NULL</code>, Python中的 <code>None</code>. <code>undefined</code> 表示未定义. 大部分情况下,都应该用 <code>null</code>, 仅在判断函数传参的时候使用 <code>undefined</code>.</p>
-<h4 id="数组"><a href="#数组" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:数组" class="headings">数组</a></h4>
-<p>数组是一个有序的元素序列, 可以包含任意类型元素. 使用整数索引可以访问元素的&quot;引用&rdquo;. 不同于Python, Javascript并不支持能通过方括号索引进行负整数索引与数组切片操作.</p>
+<h4 id="数组-array"><a href="#数组-array" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:数组-array" class="headings">数组 (Array)</a></h4>
+<p>数组是一个有序的元素序列, 可以包含任意类型元素, 一般使用以下两种方式定义. 使用整数索引可以访问元素的&quot;引用&quot;. 不同于Python, Javascript并不支持能通过方括号索引进行负整数索引与数组切片操作.</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -426,9 +446,11 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">true</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 1
 </span><span class="c1"></span><span class="nx">arr</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span> <span class="c1">// true
 </span><span class="c1"></span><span class="nx">arr</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span> <span class="c1">// undefined
@@ -436,8 +458,85 @@
 </span><span class="c1"></span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">// change to [2, 2, 3.14, ...]
 </span></code></pre></td></tr></table></div>
 </div>
+</div><p>访问数组的 <code>.length</code> 属性可以得到列表长度. 注意: <strong>更改 <code>.length</code> 属性会使得数组丢失元素或增加 <code>undefined</code> 元素</strong>. 如果你在浏览器中试过, 你会发现似乎显示的是 <code>empty</code>. 但其实这是<code>undefined</code>. 另外, 除了上面一点外, 不同于字符串的还有, 当索引值越界后, 数组会自动变长,并在中间添加 <code>undefined</code>.</p>
+<p><img src="https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-09-13-163424.png" alt="empty和undefined"><span class="caption">👉 看似 `empty` 实际 `undefined`</span></p>
+<p>和字符串类似, 字符串也支持一系列成员函数如下所示.</p>
+<ul>
+<li><code>.indexOf(Object)</code> : 搜索一个指定元素 <code>Object</code> 的下标, 没有找到时返回-1.</li>
+<li><code>Array.slice(start, end)</code> : 子数组操作. 对应的是字符串的 <code>substring</code> 函数, 截取数组的一段元素. 如果不传递参数, 则会截取所有元素, 通常用于复制一个数组. 注意, 这里的复制规则比较复杂, 可以先这么记忆, 但实际上只会真正复制字符串和数字和布尔值, 详见下图, deep表示复制内容, shallow表示只复制一个引用.</li>
+<li><code>push(*arg)</code> : 可传递任意多参数, 所传递的参数将按照顺序向末尾添加新元素. 该函数返回目标数组的新长度.</li>
+<li><code>pop()</code> : 把最后一个元素删掉, 返回删除的元素.</li>
+<li><code>unshift(*arg)</code> : 类似 <code>push</code>, 向头部添加元素.</li>
+<li><code>shift()</code> : 类似 <code>pop</code>, 删掉第一个元素, 返回删除的元素.</li>
+<li><code>sort()</code> : 按照递增字典序排序, 也可以传递一个比较函数, 暂且不提.</li>
+<li><code>reverse()</code> : 翻转数组顺序.</li>
+<li><code>splice(start, num, *arg)</code> : 删除+插入. 从 <code>start</code> 位置自己开始, 删除 <code>num</code> 个元素, 并在这里插入 <code>arg</code>. 该函数返回删除的元素.</li>
+<li><code>concat(*arg)</code> : 当前的 <code>Array</code> 和另一个 <code>Array</code> 连接起来, 并返回一个新的 <code>Array</code>. <strong>注意, 该函数并没有修改当前 <code>Array</code>, 而是返回了一个新的 <code>Array</code>. 该函数可以接受任意多参数, 如果参数包含数组, 也会将数组拆开加入</strong>.</li>
+<li><code>join(str)</code> : 将每个元素间用 <code>str</code> 连接起来, 然后返回连接后的字符串.</li>
+</ul>
+<p><img src="https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-09-15-164745.jpg" alt="JS函数处理数组的方式"><span class="caption">👉 JS函数处理数组的方式</span></p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">);</span> <span class="c1">// 6, the first appearance
+</span><span class="c1"></span><span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// [&#34;B&#34;, &#34;C&#34;]
+</span><span class="c1"></span><span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// from arr[3] to end, [&#34;D&#34;, &#34;E&#34;, &#34;F&#34;, &#34;G&#34;, &#34;G&#34;]
+</span><span class="c1"></span><span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">();</span> <span class="c1">// make a copy, [&#34;A&#34;, &#34;B&#34;, &#34;C&#34;, &#34;D&#34;, &#34;E&#34;, &#34;F&#34;, &#34;G&#34;, &#34;G&#34;]
+</span><span class="c1"></span><span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">()</span> <span class="o">===</span> <span class="nx">arr</span><span class="p">;</span> <span class="c1">// false, not the same object
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Microsoft&#39;</span><span class="p">,</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Yahoo&#39;</span><span class="p">,</span> <span class="s1">&#39;AOL&#39;</span><span class="p">,</span> <span class="s1">&#39;Excite&#39;</span><span class="p">,</span> <span class="s1">&#39;Oracle&#39;</span><span class="p">];</span>
+<span class="c1">// 从索引2开始删除3个元素,然后再添加两个元素:
+</span><span class="c1"></span><span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Google&#39;</span><span class="p">,</span> <span class="s1">&#39;Facebook&#39;</span><span class="p">);</span> <span class="c1">// 返回删除的元素 [&#39;Yahoo&#39;, &#39;AOL&#39;, &#39;Excite&#39;]
+</span><span class="c1"></span><span class="nx">arr</span><span class="p">;</span> <span class="c1">// [&#39;Microsoft&#39;, &#39;Apple&#39;, &#39;Google&#39;, &#39;Facebook&#39;, &#39;Oracle&#39;]
+</span><span class="c1">// 只删除,不添加:
+</span><span class="c1"></span><span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// [&#39;Google&#39;, &#39;Facebook&#39;]
+</span><span class="c1"></span><span class="nx">arr</span><span class="p">;</span> <span class="c1">// [&#39;Microsoft&#39;, &#39;Apple&#39;, &#39;Oracle&#39;]
+</span><span class="c1">// 只添加,不删除:
+</span><span class="c1"></span><span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Google&#39;</span><span class="p">,</span> <span class="s1">&#39;Facebook&#39;</span><span class="p">);</span> <span class="c1">// 返回[],因为没有删除任何元素
+</span><span class="c1"></span><span class="nx">arr</span><span class="p">;</span> <span class="c1">// [&#39;Microsoft&#39;, &#39;Apple&#39;, &#39;Google&#39;, &#39;Facebook&#39;, &#39;Oracle&#39;]
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">added</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+<span class="nx">added</span><span class="p">;</span> <span class="c1">// [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, 1, 2, 3]
+</span><span class="c1"></span><span class="nx">arr</span><span class="p">;</span> <span class="c1">// [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span> <span class="c1">// [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, 1, 2, 3, 4]
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">);</span> <span class="c1">// &#39;A-B-C-1-2-3&#39;
+</span></code></pre></td></tr></table></div>
+</div>
 </div><h4 id="对象"><a href="#对象" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:对象" class="headings">对象</a></h4>
-<p>Javascript的对象像C++ STL中的 <code>unordered_map</code> 或 Python中的 <code>dict</code>, 是由一组key-value对组成的无序集合,通过索引键来访问值.</p>
+<p>Javascript的对象像C++ STL中的 <code>unordered_map</code> 或 Python中的 <code>dict</code>, 是由一组key-value对组成的无序集合,通过索引键来访问值. 键值对末尾除了最后一个外必须加逗号, 如果最后一个也加了逗号, 低版本浏览器有可能会报错.</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -448,11 +547,13 @@
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span>
     <span class="nx">age</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s2">&#34;school-name&#34;</span><span class="o">:</span> <span class="s1">&#39;Tsinghua&#39;</span><span class="p">,</span>
     <span class="nx">tags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;js&#39;</span><span class="p">,</span> <span class="s1">&#39;web&#39;</span><span class="p">,</span> <span class="s1">&#39;mobile&#39;</span><span class="p">],</span>
     <span class="nx">city</span><span class="o">:</span> <span class="s1">&#39;Beijing&#39;</span><span class="p">,</span>
     <span class="nx">hasCar</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -460,19 +561,60 @@
 <span class="p">};</span>
 </code></pre></td></tr></table></div>
 </div>
-</div><p>但不同的是, javascript中对象的键都是字符串类型, 值 (属性) 可以是任意类型. 要访问某个属性的值, 需通过 <code>.</code> 来完成.</p>
+</div><p>但不同的是, javascript中对象的键都是字符串类型, 值 (属性) 可以是任意类型. 如果属性名包含特殊字符, 则属性名要用单引号或双引号括起来. 要访问某个属性的值, 需通过 <code>.</code> 来完成, 如果属性名包括特殊字符则只能通过方括号来访问.</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// &#39;Bob&#39;
 </span><span class="c1"></span><span class="nx">person</span><span class="p">.</span><span class="nx">zipcode</span><span class="p">;</span> <span class="c1">// null
+</span><span class="c1"></span><span class="nx">person</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span> <span class="c1">// &#39;Bob&#39;
+</span><span class="c1"></span><span class="nx">person</span><span class="p">[</span><span class="s1">&#39;school-name&#39;</span><span class="p">];</span> <span class="c1">// &#39;Tsinghua&#39;
+</span></code></pre></td></tr></table></div>
+</div>
+</div><p>因为Javascript是动态类型语言, 因此可以动态地添加或删除对象的属性. 但是注意, 如果访问到一个不存在的属性, 将会返回 <code>undefined</code>. 检测一个对象是否拥有某个属性可以使用 <code>in</code> 操作符, 但 <code>in</code> 操作符同样也会对继承而来的属性进行判断, 即有可能这个属性是继承而来的而非它自身的, 如要判断是否是其自身的属性, 需要用 <code>hasOwnProperty()</code>.</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">xiaoming</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;小明&#39;</span>
+<span class="p">};</span>
+<span class="nx">xiaoming</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span> <span class="c1">// undefined
+</span><span class="c1"></span><span class="nx">xiaoming</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span> <span class="c1">// 新增一个age属性
+</span><span class="c1"></span><span class="nx">xiaoming</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span> <span class="c1">// 18
+</span><span class="c1"></span><span class="k">delete</span> <span class="nx">xiaoming</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span> <span class="c1">// 删除age属性
+</span><span class="c1"></span><span class="nx">xiaoming</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span> <span class="c1">// undefined
+</span><span class="c1"></span><span class="k">delete</span> <span class="nx">xiaoming</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span> <span class="c1">// 删除name属性
+</span><span class="c1"></span><span class="nx">xiaoming</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// undefined
+</span><span class="c1"></span><span class="k">delete</span> <span class="nx">xiaoming</span><span class="p">.</span><span class="nx">school</span><span class="p">;</span> <span class="c1">// 删除一个不存在的school属性也不会报错
+</span><span class="c1"></span><span class="s1">&#39;name&#39;</span> <span class="k">in</span> <span class="nx">xiaoming</span><span class="p">;</span> <span class="c1">// true
+</span><span class="c1"></span><span class="s1">&#39;school&#39;</span> <span class="k">in</span> <span class="nx">xiaoming</span><span class="p">;</span> <span class="c1">// false
+</span><span class="c1"></span><span class="s1">&#39;toString&#39;</span> <span class="k">in</span> <span class="nx">xiaoming</span><span class="p">;</span> <span class="c1">// true
+</span><span class="c1"></span><span class="nx">xiaoming</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;toString&#39;</span><span class="p">);</span> <span class="c1">// false
 </span></code></pre></td></tr></table></div>
 </div>
 </div><h4 id="变量"><a href="#变量" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:变量" class="headings">变量</a></h4>
-<p>其实以上的代码示例中已经用到了很多变量. Javascript中的变量名可以由<strong>字母, 数字, <code>$</code>, <code>_</code></strong>组合而成, 但不能用数字开头. 当然, 变量名也不能是语言自身的关键字. 声明并定义一个变量的<strong>推荐</strong>方式为 <code>var name = ...;</code> 形式.</p>
+<p>其实以上的代码示例中已经用到了很多变量. Javascript中的变量名可以由<strong>字母, 数字, <code>$</code>, <code>_</code><strong>组合而成, 但不能用数字开头. 当然, 变量名也不能是语言自身的关键字. 声明并定义一个变量的</strong>推荐</strong>方式为 <code>var name = ...;</code> 形式.</p>
 <p>其实, javascript并不要求变量使用 <code>var</code> 声明. 但是, 如果一个变量没有使用 <code>var</code>, 那么他将变成一个全局变量 (如 <code>b</code> ). 这样会使得同一个页面引入的不同JS文件中的变量相互冲突, 造成不可预知的后果. 因此, 牢记<strong>声明变量的时候应当使用 <code>var</code></strong>.</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
@@ -496,6 +638,8 @@
 </code></pre></td></tr></table></div>
 </div>
 </div><p>支持strict模式的浏览器将开启strict模式, 而不支持该模式的浏览器将会把这一行当作一个没有什么意义的普通语句来执行. 为了避免因为粗心大意在声明变量时忽略 <code>var</code>, <strong>任何脚本都应该开启strict模式</strong>.</p>
+<h2 id="阶段总结"><a href="#阶段总结" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:阶段总结" class="headings">阶段总结</a></h2>
+<p>这一块讲了基本的javascript的内置类型和基本的语法, 记忆的东西偏多, 基本没有需要重点理解的地方. 可以看到内容也不是很多, 因此说学习javascript学习曲线很平缓. 但是, 易学并不代表易写, 也不表示轻松就能写好, 还需要多多努力.</p>
 
             </div>
 
@@ -524,9 +668,9 @@
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2020-09-14 00:11:16 CST" style="cursor:help">
+        <span title="Updated @ 2020-09-16 01:38:58 CST" style="cursor:help">
 
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-09-14</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-09-14</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-09-16</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-09-16</text></g></svg>
         </span></div>
 
 
@@ -551,7 +695,7 @@
             
                 <div class="share-item weibo">
                     
-                    <a href="https://service.weibo.com/share/share.php?&amp;url=https://minys233.github.io/posts/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/&amp;title=Javascript%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%281%29&amp;pic=https://minys233.github.io/icons/apple-touch-icon.png&amp;searchPic=false" title="Share on Weibo" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon weibo-icon"><path d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7-22 4.8-28.8-28.1-7.1-32.8 50.1-10.9 92.3 37.1 76.5 84.8-6.8 21.2-38.8 10.8-32-10.3zM214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6 79.5-33.6 140.5-16.8 114 51.4-3.7 9.4 1.1 10.9 8.3 13.1 135.7 42.3 34.8 215.2-169.7 215.2zm143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116zM347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3 72.3-15.2 134.8 52.8 111.7 124-7.4 24.2 29.1 37 37.4 12 31.9-99.8-55.1-195.9-157.4-174.3zm-78.5 311c-17.1 38.8-66.8 60-109.1 46.3-40.8-13.1-58-53.4-40.3-89.7 17.7-35.4 63.1-55.4 103.4-45.1 42 10.8 63.1 50.2 46 88.5zm-86.3-30c-12.9-5.4-30 .3-38 12.9-8.3 12.9-4.3 28 8.6 34 13.1 6 30.8.3 39.1-12.9 8-13.1 3.7-28.3-9.7-34zm32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4-2.9 5.1-1.4 10.6 3.7 12.9 5.1 2 11.7-.3 14.6-5.4 2.8-5.2 1.1-10.9-4-12.9z"/></svg></a>
+                    <a href="https://service.weibo.com/share/share.php?&amp;url=https://minys233.github.io/posts/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/&amp;title=Javascript%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%281%29&amp;pic=https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-09-13-163424.png&amp;searchPic=false" title="Share on Weibo" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon weibo-icon"><path d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7-22 4.8-28.8-28.1-7.1-32.8 50.1-10.9 92.3 37.1 76.5 84.8-6.8 21.2-38.8 10.8-32-10.3zM214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6 79.5-33.6 140.5-16.8 114 51.4-3.7 9.4 1.1 10.9 8.3 13.1 135.7 42.3 34.8 215.2-169.7 215.2zm143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116zM347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3 72.3-15.2 134.8 52.8 111.7 124-7.4 24.2 29.1 37 37.4 12 31.9-99.8-55.1-195.9-157.4-174.3zm-78.5 311c-17.1 38.8-66.8 60-109.1 46.3-40.8-13.1-58-53.4-40.3-89.7 17.7-35.4 63.1-55.4 103.4-45.1 42 10.8 63.1 50.2 46 88.5zm-86.3-30c-12.9-5.4-30 .3-38 12.9-8.3 12.9-4.3 28 8.6 34 13.1 6 30.8.3 39.1-12.9 8-13.1 3.7-28.3-9.7-34zm32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4-2.9 5.1-1.4 10.6 3.7 12.9 5.1 2 11.7-.3 14.6-5.4 2.8-5.2 1.1-10.9-4-12.9z"/></svg></a>
                 </div>
             
 
@@ -560,7 +704,7 @@
             
                 <div class="share-item qq">
                     
-                    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://minys233.github.io/posts/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/&amp;title=Javascript%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%281%29&amp;summary=Javascript%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&amp;pics=https://minys233.github.io/icons/apple-touch-icon.png&amp;site=Minys%27s%20blog" title="Share on QQ" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qq-icon"><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg></a>
+                    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://minys233.github.io/posts/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/&amp;title=Javascript%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%281%29&amp;summary=Javascript%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&amp;pics=https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-09-13-163424.png&amp;site=Minys%27s%20blog" title="Share on QQ" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qq-icon"><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg></a>
                 </div>
             
 

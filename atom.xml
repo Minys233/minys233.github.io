@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Minys&#39;s blog</title>
     <subtitle type="html">Minys&#39;s blog - Record my ordinary life</subtitle>
-    <updated>2020-09-14T00:12:28&#43;08:00</updated>
+    <updated>2020-09-16T01:55:49&#43;08:00</updated>
     <id>https://minys233.github.io/</id>
     <link rel="alternate" type="text/html" href="https://minys233.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://minys233.github.io/atom.xml" />
@@ -15,12 +15,12 @@
                 <email>minys@foxmail.com</email>
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
-    <generator uri="https://gohugo.io/" version="0.74.3">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.75.0-DEV">Hugo</generator>
         <entry>
             <title type="text">Javascript学习笔记 (1)</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" />
             <id>https://minys233.github.io/posts/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</id>
-            <updated>2020-09-14T00:11:16&#43;08:00</updated>
+            <updated>2020-09-16T01:38:58&#43;08:00</updated>
             <published>2020-09-13T00:15:18&#43;08:00</published>
             <author>
                     <name>Minys</name>
@@ -30,7 +30,7 @@
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Javascript学习笔记</summary>
             
                 <content type="html">&lt;h2 id=&#34;写在前面&#34;&gt;写在前面&lt;/h2&gt;
-&lt;p&gt;为什么要学习JS呢? 对我来说, 日常科研工作中有很多场景都需要和互联网, 尤其是前端打交道. 比如:文献制图, 数据可视化, 训练监控, 维护博客等等. 在这些过程中有很多端到端的工具可以使用, 但也仅仅是停留在&amp;quot;使用&amp;rdquo;. 有时出现错误或新增内容时, 总要写点新东西或者整合一些JS库. 每到这时, 总是会触及到我的知识盲区, 即&amp;quot;明明知道用JS可以轻松解决但就是不会&amp;rdquo;. 列举几个让我十分沮丧的时刻:&lt;/p&gt;
+&lt;p&gt;为什么要学习JS呢? 对我来说, 日常科研工作中有很多场景都需要和互联网, 尤其是前端打交道. 比如:文献制图, 数据可视化, 训练监控, 维护博客等等. 在这些过程中有很多端到端的工具可以使用, 但也仅仅是停留在&amp;quot;使用&amp;quot;. 有时出现错误或新增内容时, 总要写点新东西或者整合一些JS库. 每到这时, 总是会触及到我的知识盲区, 即&amp;quot;明明知道用JS可以轻松解决但就是不会&amp;quot;. 列举几个让我十分沮丧的时刻:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;本科时每学期评教, 要选中页面中所有特定的单选框&lt;/li&gt;
 &lt;li&gt;咪咕音乐PC端仅提供网页应用, 或许可以使用Electron打包成APP&lt;/li&gt;
@@ -111,7 +111,7 @@
 &lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;字符串&#34;&gt;字符串&lt;/h4&gt;
+&lt;/div&gt;&lt;h4 id=&#34;字符串-string&#34;&gt;字符串 (String)&lt;/h4&gt;
 &lt;p&gt;字符串使用 &lt;code&gt;&#39;&#39;&lt;/code&gt; 或 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; 包围的任意文本, 如 &lt;code&gt;abc&lt;/code&gt; , &lt;code&gt;&amp;quot;xyz&amp;quot;&lt;/code&gt; .  字符转义与其他语言完全一致, 如 &lt;code&gt;&#39;I\&#39;m Yaosen!\n&#39;&lt;/code&gt;. 另外,也可以使用十六进制数 &lt;code&gt;&#39;\x##&#39;&lt;/code&gt; 表示字符串中的字符, 如 &lt;code&gt;&#39;\x41bc&#39; === &#39;Abc&#39;&lt;/code&gt;. 也可以用 &lt;code&gt;&#39;\u####&#39;&lt;/code&gt; 表示字符串中的一个Unicode字符, 如 &lt;code&gt;&#39;\u4e2d\u6587&#39; === &#39;中文&#39;&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;如果字符串很长, 写换行符会很烦, 可以使用ES6新标准中的多行字符串表示方法, 用&lt;code&gt;`...`&lt;/code&gt; 括住即可. 同时, 反引号字符串也可以当作模板字符串将变量嵌入至字符串中, 而不用写很多+号.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -138,7 +138,25 @@
 &lt;span class=&#34;c1&#34;&gt;// message3 === &amp;#34;Hello, I&amp;#39;m Yaosen,\nI&amp;#39;m 24 years old.&amp;#34;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;布尔值&#34;&gt;布尔值&lt;/h4&gt;
+&lt;/div&gt;&lt;p&gt;字符串对象的操作类似列表. 通过 &lt;code&gt;.length&lt;/code&gt; 获得长度, 通过方括号索引获取对应字符. 但是修改 &lt;code&gt;.length&lt;/code&gt; 虽不会报错, 但是并不能更改字符串长度, 属性值也不会改变. &lt;strong&gt;字符串是不可变的, 对索引赋值不会有任何效果.&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Hellw!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// mis-spelled
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;o&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// no effect
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;个人认为, 字符串操作的丰富与否直接决定了一个语言是否对新手友好, 因为如果打log都很不是很容易, 那么学习曲线就会很陡峭. 因此, 易于学习的Javascript字符串对象有不少成员函数来操作字符串:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;s.toUpperCase()&lt;/code&gt; : 全部大写, 仅对有大小写关系的字符有效.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s.toLowerCase()&lt;/code&gt; : 全部小写, 仅对有大小写关系的字符有效.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s.indexOf(str)&lt;/code&gt; : 返回指定 &lt;code&gt;str&lt;/code&gt; 字符串出现的位置, 没找到返回-1.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s.substring(start, end)&lt;/code&gt; : 返回 &lt;code&gt;[start, end)&lt;/code&gt; 区间的子字符串, 如 &lt;code&gt;end&lt;/code&gt; 未指定, 默认到字符串结尾.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;布尔值&#34;&gt;布尔值&lt;/h4&gt;
 &lt;p&gt;同C/C++, 有 &lt;code&gt;true&lt;/code&gt; , &lt;code&gt;false&lt;/code&gt; 两种值. 对应的布尔运算如下:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -158,11 +176,11 @@
 &lt;li&gt;&lt;code&gt;==&lt;/code&gt; : 比较时自动转换类型, 可得到 &lt;code&gt;false == 0&lt;/code&gt; 为 &lt;code&gt;true&lt;/code&gt; 这样的神奇情况&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;===&lt;/code&gt; : 比较时不会转换类型,如果数据类型不一致直接 &lt;code&gt;false&lt;/code&gt;, 类型相同再比较&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;这是Javascript的一个设计缺陷, 尽量避免使用 &lt;code&gt;==&lt;/code&gt;&lt;/strong&gt;. 另外, &lt;code&gt;NaN&lt;/code&gt; 和任何数包括他自己都不想等, 即 &lt;code&gt;NaN === NaN&lt;/code&gt; 将得到 &lt;code&gt;false&lt;/code&gt;, 符合数值运算时约定俗称的规矩.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这是Javascript的一个设计缺陷, 尽量避免使用 &lt;code&gt;==&lt;/code&gt;&lt;/strong&gt;. 另外, &lt;code&gt;NaN&lt;/code&gt; 和任何数包括他自己都不想等, 即 &lt;code&gt;NaN === NaN&lt;/code&gt; 将得到 &lt;code&gt;false&lt;/code&gt;, 符合数值运算时约定俗称的规矩. 实际上, &lt;code&gt;===&lt;/code&gt; 当且仅当两边的对象指向相同的数据, 如 &lt;code&gt;new Number(0) === new Number(0);&lt;/code&gt; 为 &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;null-与-undefined&#34;&gt;&lt;code&gt;null&lt;/code&gt; 与 &lt;code&gt;undefined&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;null&lt;/code&gt; 表示空 (void) 之意, 类似C中的 &lt;code&gt;NULL&lt;/code&gt;, Python中的 &lt;code&gt;None&lt;/code&gt;. &lt;code&gt;undefined&lt;/code&gt; 表示未定义. 大部分情况下,都应该用 &lt;code&gt;null&lt;/code&gt;, 仅在判断函数传参的时候使用 &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
-&lt;h4 id=&#34;数组&#34;&gt;数组&lt;/h4&gt;
-&lt;p&gt;数组是一个有序的元素序列, 可以包含任意类型元素. 使用整数索引可以访问元素的&amp;quot;引用&amp;rdquo;. 不同于Python, Javascript并不支持能通过方括号索引进行负整数索引与数组切片操作.&lt;/p&gt;
+&lt;h4 id=&#34;数组-array&#34;&gt;数组 (Array)&lt;/h4&gt;
+&lt;p&gt;数组是一个有序的元素序列, 可以包含任意类型元素, 一般使用以下两种方式定义. 使用整数索引可以访问元素的&amp;quot;引用&amp;quot;. 不同于Python, Javascript并不支持能通过方括号索引进行负整数索引与数组切片操作.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -171,9 +189,11 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;3.14&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;3.14&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 1
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// true
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// undefined
@@ -181,8 +201,85 @@
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// change to [2, 2, 3.14, ...]
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;访问数组的 &lt;code&gt;.length&lt;/code&gt; 属性可以得到列表长度. 注意: &lt;strong&gt;更改 &lt;code&gt;.length&lt;/code&gt; 属性会使得数组丢失元素或增加 &lt;code&gt;undefined&lt;/code&gt; 元素&lt;/strong&gt;. 如果你在浏览器中试过, 你会发现似乎显示的是 &lt;code&gt;empty&lt;/code&gt;. 但其实这是&lt;code&gt;undefined&lt;/code&gt;. 另外, 除了上面一点外, 不同于字符串的还有, 当索引值越界后, 数组会自动变长,并在中间添加 &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-09-13-163424.png&#34; alt=&#34;empty和undefined&#34; title=&#34;看似 `empty` 实际 `undefined`&#34;&gt;&lt;/p&gt;
+&lt;p&gt;和字符串类似, 字符串也支持一系列成员函数如下所示.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.indexOf(Object)&lt;/code&gt; : 搜索一个指定元素 &lt;code&gt;Object&lt;/code&gt; 的下标, 没有找到时返回-1.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Array.slice(start, end)&lt;/code&gt; : 子数组操作. 对应的是字符串的 &lt;code&gt;substring&lt;/code&gt; 函数, 截取数组的一段元素. 如果不传递参数, 则会截取所有元素, 通常用于复制一个数组. 注意, 这里的复制规则比较复杂, 可以先这么记忆, 但实际上只会真正复制字符串和数字和布尔值, 详见下图, deep表示复制内容, shallow表示只复制一个引用.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;push(*arg)&lt;/code&gt; : 可传递任意多参数, 所传递的参数将按照顺序向末尾添加新元素. 该函数返回目标数组的新长度.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pop()&lt;/code&gt; : 把最后一个元素删掉, 返回删除的元素.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;unshift(*arg)&lt;/code&gt; : 类似 &lt;code&gt;push&lt;/code&gt;, 向头部添加元素.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;shift()&lt;/code&gt; : 类似 &lt;code&gt;pop&lt;/code&gt;, 删掉第一个元素, 返回删除的元素.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sort()&lt;/code&gt; : 按照递增字典序排序, 也可以传递一个比较函数, 暂且不提.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;reverse()&lt;/code&gt; : 翻转数组顺序.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;splice(start, num, *arg)&lt;/code&gt; : 删除+插入. 从 &lt;code&gt;start&lt;/code&gt; 位置自己开始, 删除 &lt;code&gt;num&lt;/code&gt; 个元素, 并在这里插入 &lt;code&gt;arg&lt;/code&gt;. 该函数返回删除的元素.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;concat(*arg)&lt;/code&gt; : 当前的 &lt;code&gt;Array&lt;/code&gt; 和另一个 &lt;code&gt;Array&lt;/code&gt; 连接起来, 并返回一个新的 &lt;code&gt;Array&lt;/code&gt;. &lt;strong&gt;注意, 该函数并没有修改当前 &lt;code&gt;Array&lt;/code&gt;, 而是返回了一个新的 &lt;code&gt;Array&lt;/code&gt;. 该函数可以接受任意多参数, 如果参数包含数组, 也会将数组拆开加入&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;join(str)&lt;/code&gt; : 将每个元素间用 &lt;code&gt;str&lt;/code&gt; 连接起来, 然后返回连接后的字符串.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-09-15-164745.jpg&#34; alt=&#34;JS函数处理数组的方式&#34; title=&#34;JS函数处理数组的方式&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;C&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;D&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;E&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;F&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;G&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;G&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;indexOf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;G&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 6, the first appearance
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;slice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [&amp;#34;B&amp;#34;, &amp;#34;C&amp;#34;]
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;slice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// from arr[3] to end, [&amp;#34;D&amp;#34;, &amp;#34;E&amp;#34;, &amp;#34;F&amp;#34;, &amp;#34;G&amp;#34;, &amp;#34;G&amp;#34;]
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;slice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// make a copy, [&amp;#34;A&amp;#34;, &amp;#34;B&amp;#34;, &amp;#34;C&amp;#34;, &amp;#34;D&amp;#34;, &amp;#34;E&amp;#34;, &amp;#34;F&amp;#34;, &amp;#34;G&amp;#34;, &amp;#34;G&amp;#34;]
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;slice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// false, not the same object
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Microsoft&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Apple&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Yahoo&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;AOL&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Excite&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Oracle&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;// 从索引2开始删除3个元素,然后再添加两个元素:
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;splice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Google&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Facebook&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 返回删除的元素 [&amp;#39;Yahoo&amp;#39;, &amp;#39;AOL&amp;#39;, &amp;#39;Excite&amp;#39;]
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [&amp;#39;Microsoft&amp;#39;, &amp;#39;Apple&amp;#39;, &amp;#39;Google&amp;#39;, &amp;#39;Facebook&amp;#39;, &amp;#39;Oracle&amp;#39;]
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 只删除,不添加:
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;splice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [&amp;#39;Google&amp;#39;, &amp;#39;Facebook&amp;#39;]
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [&amp;#39;Microsoft&amp;#39;, &amp;#39;Apple&amp;#39;, &amp;#39;Oracle&amp;#39;]
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 只添加,不删除:
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;splice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Google&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Facebook&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 返回[],因为没有删除任何元素
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [&amp;#39;Microsoft&amp;#39;, &amp;#39;Apple&amp;#39;, &amp;#39;Google&amp;#39;, &amp;#39;Facebook&amp;#39;, &amp;#39;Oracle&amp;#39;]
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;C&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;added&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;concat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;added&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [&amp;#39;A&amp;#39;, &amp;#39;B&amp;#39;, &amp;#39;C&amp;#39;, 1, 2, 3]
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [&amp;#39;A&amp;#39;, &amp;#39;B&amp;#39;, &amp;#39;C&amp;#39;]
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;C&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;concat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [&amp;#39;A&amp;#39;, &amp;#39;B&amp;#39;, &amp;#39;C&amp;#39;, 1, 2, 3, 4]
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;B&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;C&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;join&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// &amp;#39;A-B-C-1-2-3&amp;#39;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;对象&#34;&gt;对象&lt;/h4&gt;
-&lt;p&gt;Javascript的对象像C++ STL中的 &lt;code&gt;unordered_map&lt;/code&gt; 或 Python中的 &lt;code&gt;dict&lt;/code&gt;, 是由一组key-value对组成的无序集合,通过索引键来访问值.&lt;/p&gt;
+&lt;p&gt;Javascript的对象像C++ STL中的 &lt;code&gt;unordered_map&lt;/code&gt; 或 Python中的 &lt;code&gt;dict&lt;/code&gt;, 是由一组key-value对组成的无序集合,通过索引键来访问值. 键值对末尾除了最后一个外必须加逗号, 如果最后一个也加了逗号, 低版本浏览器有可能会报错.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -193,11 +290,13 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;person&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
     &lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Bob&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
     &lt;span class=&#34;nx&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;school-name&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Tsinghua&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
     &lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;js&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;web&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;mobile&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
     &lt;span class=&#34;nx&#34;&gt;city&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Beijing&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
     &lt;span class=&#34;nx&#34;&gt;hasCar&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
@@ -205,19 +304,60 @@
 &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;但不同的是, javascript中对象的键都是字符串类型, 值 (属性) 可以是任意类型. 要访问某个属性的值, 需通过 &lt;code&gt;.&lt;/code&gt; 来完成.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;但不同的是, javascript中对象的键都是字符串类型, 值 (属性) 可以是任意类型. 如果属性名包含特殊字符, 则属性名要用单引号或双引号括起来. 要访问某个属性的值, 需通过 &lt;code&gt;.&lt;/code&gt; 来完成, 如果属性名包括特殊字符则只能通过方括号来访问.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;person&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// &amp;#39;Bob&amp;#39;
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;person&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;zipcode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// null
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;person&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// &amp;#39;Bob&amp;#39;
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;person&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;school-name&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// &amp;#39;Tsinghua&amp;#39;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;因为Javascript是动态类型语言, 因此可以动态地添加或删除对象的属性. 但是注意, 如果访问到一个不存在的属性, 将会返回 &lt;code&gt;undefined&lt;/code&gt;. 检测一个对象是否拥有某个属性可以使用 &lt;code&gt;in&lt;/code&gt; 操作符, 但 &lt;code&gt;in&lt;/code&gt; 操作符同样也会对继承而来的属性进行判断, 即有可能这个属性是继承而来的而非它自身的, 如要判断是否是其自身的属性, 需要用 &lt;code&gt;hasOwnProperty()&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;小明&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// undefined
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;age&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 新增一个age属性
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 18
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;delete&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 删除age属性
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// undefined
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;delete&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 删除name属性
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// undefined
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;delete&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 删除一个不存在的school属性也不会报错
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// true
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;school&amp;#39;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// false
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;toString&amp;#39;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// true
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;xiaoming&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;hasOwnProperty&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;toString&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// false
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;变量&#34;&gt;变量&lt;/h4&gt;
-&lt;p&gt;其实以上的代码示例中已经用到了很多变量. Javascript中的变量名可以由&lt;strong&gt;字母, 数字, &lt;code&gt;$&lt;/code&gt;, &lt;code&gt;_&lt;/code&gt;&lt;/strong&gt;组合而成, 但不能用数字开头. 当然, 变量名也不能是语言自身的关键字. 声明并定义一个变量的&lt;strong&gt;推荐&lt;/strong&gt;方式为 &lt;code&gt;var name = ...;&lt;/code&gt; 形式.&lt;/p&gt;
+&lt;p&gt;其实以上的代码示例中已经用到了很多变量. Javascript中的变量名可以由&lt;strong&gt;字母, 数字, &lt;code&gt;$&lt;/code&gt;, &lt;code&gt;_&lt;/code&gt;&lt;strong&gt;组合而成, 但不能用数字开头. 当然, 变量名也不能是语言自身的关键字. 声明并定义一个变量的&lt;/strong&gt;推荐&lt;/strong&gt;方式为 &lt;code&gt;var name = ...;&lt;/code&gt; 形式.&lt;/p&gt;
 &lt;p&gt;其实, javascript并不要求变量使用 &lt;code&gt;var&lt;/code&gt; 声明. 但是, 如果一个变量没有使用 &lt;code&gt;var&lt;/code&gt;, 那么他将变成一个全局变量 (如 &lt;code&gt;b&lt;/code&gt; ). 这样会使得同一个页面引入的不同JS文件中的变量相互冲突, 造成不可预知的后果. 因此, 牢记&lt;strong&gt;声明变量的时候应当使用 &lt;code&gt;var&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -241,6 +381,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;支持strict模式的浏览器将开启strict模式, 而不支持该模式的浏览器将会把这一行当作一个没有什么意义的普通语句来执行. 为了避免因为粗心大意在声明变量时忽略 &lt;code&gt;var&lt;/code&gt;, &lt;strong&gt;任何脚本都应该开启strict模式&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;阶段总结&#34;&gt;阶段总结&lt;/h2&gt;
+&lt;p&gt;这一块讲了基本的javascript的内置类型和基本的语法, 记忆的东西偏多, 基本没有需要重点理解的地方. 可以看到内容也不是很多, 因此说学习javascript学习曲线很平缓. 但是, 易学并不代表易写, 也不表示轻松就能写好, 还需要多多努力.&lt;/p&gt;
 </content>
             
             
@@ -275,7 +417,7 @@
             <title type="text">机器学习轶事趣闻</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BD%B6%E4%BA%8B%E8%B6%A3%E9%97%BB/" />
             <id>https://minys233.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BD%B6%E4%BA%8B%E8%B6%A3%E9%97%BB/</id>
-            <updated>2020-09-11T00:42:10&#43;08:00</updated>
+            <updated>2020-09-14T00:14:49&#43;08:00</updated>
             <published>2020-06-01T21:18:25&#43;08:00</published>
             <author>
                     <name>Minys</name>
@@ -329,7 +471,7 @@ Berkeley, CA
             <title type="text">Learning Multimodal Graph to Graph Translation for Molecular Optimization</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/learning-multimodal-graph-to-graph-translation-for-molecular-optimization/" />
             <id>https://minys233.github.io/posts/learning-multimodal-graph-to-graph-translation-for-molecular-optimization/</id>
-            <updated>2020-09-11T00:42:10&#43;08:00</updated>
+            <updated>2020-09-14T00:14:49&#43;08:00</updated>
             <published>2020-05-28T22:52:13&#43;08:00</published>
             <author>
                     <name>Minys</name>
@@ -339,7 +481,7 @@ Berkeley, CA
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">读后总结, 刊于ICLR 2019</summary>
             
                 <content type="html">&lt;h2 id=&#34;论文简述&#34;&gt;论文简述&lt;/h2&gt;
-&lt;p&gt;药物发现的目标是设计具有特定期望的化学性质的分子.  这个任务很具有挑战性, 因为化学空间是巨大的且难于探索. 一个解决该问题的流行的方法使匹配分子对分析 (MMPA). 通过学习&amp;quot;分子释义&amp;rdquo;, 来提升化合物特定的性质. 这与机器翻译的策略很相似: MMPA输入一个分子对 $\{(X, Y)\}$, 其中 $Y$ 看做是 $X$ 的释义/含义, 并具有更好的化学性质. 然而现有的MMPA方法将分子对提炼为图转化 (graph transformation) 问题, 而非更普适的图之间的翻译问题.&lt;/p&gt;
+&lt;p&gt;药物发现的目标是设计具有特定期望的化学性质的分子.  这个任务很具有挑战性, 因为化学空间是巨大的且难于探索. 一个解决该问题的流行的方法使匹配分子对分析 (MMPA). 通过学习&amp;quot;分子释义&amp;quot;, 来提升化合物特定的性质. 这与机器翻译的策略很相似: MMPA输入一个分子对 $\{(X, Y)\}$, 其中 $Y$ 看做是 $X$ 的释义/含义, 并具有更好的化学性质. 然而现有的MMPA方法将分子对提炼为图转化 (graph transformation) 问题, 而非更普适的图之间的翻译问题.&lt;/p&gt;
 &lt;p&gt;因此,本文提出将分子优化问题 (molecular optimization) 看做一个图对图的翻译 (graph-to-graph translation). 给定分子对的文集, 任务目标是学习如何将输入的分子图翻译为更好的图. 这个思路中涉及很多问题: 如何编码图, 如何生成图. 其中如何编码图已有若干工作, 但在不诉诸于专业领域知识的情况下生成图, 确是一个难题. 另外, 一个分子的&amp;quot;释义&amp;quot;可以是多个, 因为有不同的分子优化策略. 因此, 本文的问题最终转化为如何生成多模态的分子图.&lt;/p&gt;
 &lt;p&gt;本文使用了junction tree encoder-decoder来在注意力机制下解码生成分子图. 为了 (a) 捕捉不同的输出, 本文在解码过程中引入了隐码 (latent code), 使其能捕捉有意义的分子变种; 为了 (b) 避免无效的翻译结果, 本文以入了对抗训练, 使用随机选择的隐码对齐模型生成的图的分布和以观察到的有效输出 (真值) 的分布.&lt;/p&gt;
 &lt;h2 id=&#34;解决方案&#34;&gt;解决方案&lt;/h2&gt;
@@ -350,8 +492,8 @@ Berkeley, CA
 &lt;h3 id=&#34;树图二合一编码器&#34;&gt;树图二合一编码器&lt;/h3&gt;
 &lt;p&gt;图定义为 $G=(\mathcal{V}, \mathcal{E})$. 图中节点 $v$ 具有特征 $\boldsymbol f_v$ . 对原子来说, 其中包含了原子类型, 化合价等原子性质. 对junction tree中的节点 (文中称cluster),  $\boldsymbol f_v$ 是one-hot向量, 表示其类别. 类似地, 边 $(u,v)\in\mathcal{E}$ 也有对应的特征 $\boldsymbol f_{uv}$. $N(v)$ 表示节点 $v$ 邻居构成的集合. 每条边 $(u,v)$ 有两个隐向量: $\boldsymbol\nu_{uv} , \boldsymbol\nu_{vu}$ , 分别表示两个方向传递的消息. 则消息传递网络通过神经网络 $g_1(\cdot)$ 更新图中边上的消息:&lt;/p&gt;
 &lt;p&gt;$$
-\boldsymbol\nu_{uv}^{(t)}=g_1\left(\boldsymbol f_u, 
-\boldsymbol f_{uv}, \sum_{w\in N(u)\backslash v} 
+\boldsymbol\nu_{uv}^{(t)}=g_1\left(\boldsymbol f_u,
+\boldsymbol f_{uv}, \sum_{w\in N(u)\backslash v}
 \boldsymbol\nu_{wu}^{(t-1)}\right)
 $$&lt;/p&gt;
 &lt;p&gt;其中 $\boldsymbol \nu_{uv}^{(t)}$ 表示第 $t$ 次迭代时边 $(u,v)$ 上的消息, 其初始化为零向量. 图上节点更新顺序是异步的, 即没有预定义的顺序. 在 $T$ 次迭代之后, 我们将图中消息通过神经网络 $g_2(\cdot)$ 聚合, 得到每一个节点的嵌入向量, 其刻画了..图或树中的局部结构..
@@ -376,7 +518,7 @@ $$
 $$
 \boldsymbol c_t^d =  \left[\sum_i \boldsymbol \alpha_{i,t}^{\mathcal{T}}\boldsymbol x_{i}^{\mathcal{T}}, \sum_i \boldsymbol \alpha_{i,t}^{\mathcal{G}}\boldsymbol x_{i}^{\mathcal{G}}\right]
 $$&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;..标签预测..&lt;/strong&gt;. 如果节点 $j_t$ 是 $i_t$ 生成的新节点, 其标签(表明它是何种分子骨架的标签)可以通过下式预测. 
+&lt;p&gt;&lt;strong&gt;..标签预测..&lt;/strong&gt;. 如果节点 $j_t$ 是 $i_t$ 生成的新节点, 其标签(表明它是何种分子骨架的标签)可以通过下式预测.
 $$
 \begin{aligned}
 \boldsymbol c_t^l &amp;amp;=\text{attention}(\boldsymbol h_{i_t,j_t}, {\boldsymbol x_*^{\mathcal{T}}}, {\boldsymbol x_*^{\mathcal{G}}}; \boldsymbol U_{att}^l) \\&lt;br&gt;
@@ -390,7 +532,7 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-06-02-114547.png&#34; title=&#34;相同的树可以组合为不同的分子.&#34; style=&#34;zoom:30%;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;为此, 本文作者设计了一个打分函数 $f(\cdot)$ 来对每一个 $\mathcal G_i$ 中的候选分子图 (对应连接方式) 进行排序. 首先, 用图消息传递网络对图 $G_i$ 计算原子表示 $\{\boldsymbol \mu_v^{G_i}\}$ . 然后使用sum-pooling求得图的表示 $\boldsymbol m_{G_i}=\sum_v \boldsymbol \mu_v^{G_i}$ . 最后, 通过点积函数为这个图打分 $f(G_i) = \sum_{u\in G}\boldsymbol m_{G_i}\cdot \boldsymbol x_u^{\mathcal{G}}$.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;https://minys233.github.io/posts/learning-multimodal-graph-to-graph-translation-for-molecular-optimization/#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;解码器训练过程的损失函数是真值的子图和树中节点(原子团)的对数似然函数:
 $$
-\mathcal L_g(G) = \sum_i\left[ f(G_i)-\log\sum_{G_i&amp;rsquo;\in\mathcal G_i}exp(f(G_i&amp;rsquo;)) \right]
+\mathcal L_g(G) = \sum_i\left[ f(G_i)-\log\sum_{G_i&#39;\in\mathcal G_i}exp(f(G_i&#39;)) \right]
 $$&lt;/p&gt;
 &lt;h3 id=&#34;多模态图-图翻译&#34;&gt;多模态图-图翻译&lt;/h3&gt;
 &lt;h4 id=&#34;变分junction-tree编码-解码器vjtnn&#34;&gt;变分Junction tree编码-解码器(VJTNN)&lt;/h4&gt;
@@ -461,7 +603,7 @@ $$&lt;/p&gt;
             <title type="text">How Powerful Are Graph Neural Networks?</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/how-powerful-are-graph-neural-networks/" />
             <id>https://minys233.github.io/posts/how-powerful-are-graph-neural-networks/</id>
-            <updated>2020-09-11T00:42:10&#43;08:00</updated>
+            <updated>2020-09-14T00:14:49&#43;08:00</updated>
             <published>2020-05-20T20:59:03&#43;08:00</published>
             <author>
                     <name>Minys</name>
@@ -591,7 +733,7 @@ $$
             <title type="text">学术英语写作</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/%E5%AD%A6%E6%9C%AF%E8%8B%B1%E8%AF%AD%E5%86%99%E4%BD%9C/" />
             <id>https://minys233.github.io/posts/%E5%AD%A6%E6%9C%AF%E8%8B%B1%E8%AF%AD%E5%86%99%E4%BD%9C/</id>
-            <updated>2020-09-11T00:42:10&#43;08:00</updated>
+            <updated>2020-09-16T01:39:00&#43;08:00</updated>
             <published>2020-05-20T15:30:54&#43;08:00</published>
             <author>
                     <name>Minys</name>
@@ -623,6 +765,10 @@ $$
 &lt;p&gt;The goal of drug discovery is to design molecules with desirable chemical properties. The task is challenging since the chemical space is vast and often difficult to navigate.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;From &lt;em&gt;Learning Multimodal Graph to Graph Translation for Molecular Optimization&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;One of the hallmarks of deep learning was the use of neural networks with tens or even hundreds of layers. In stark contrast, most of the architectures used in graph deep learning are shallow with just a handful of layers.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;From &lt;em&gt;&lt;a href=&#34;https://towardsdatascience.com/do-we-need-deep-graph-neural-networks-be62d3ec5c59&#34;&gt;Michael Bronstein&amp;rsquo;s blog&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </content>
             
             
@@ -657,7 +803,7 @@ $$
             <title type="text">Strategies for Pre Training Graph Neural Networks</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/" />
             <id>https://minys233.github.io/posts/strategies-for-pre-training-graph-neural-networks/</id>
-            <updated>2020-09-11T00:42:10&#43;08:00</updated>
+            <updated>2020-09-14T00:14:49&#43;08:00</updated>
             <published>2020-05-20T15:26:23&#43;08:00</published>
             <author>
                     <name>Minys</name>
@@ -683,7 +829,7 @@ $$
 &lt;p&gt;&lt;img src=&#34;https://minys-blog.oss-cn-beijing.aliyuncs.com/2020-05-20-WX20200520-170517%402x.png&#34; alt=&#34;节点嵌入&#34;&gt;&lt;/p&gt;
 &lt;p&gt;**Context prediction.**对每一个节点 $v$ ， $K$-hop 邻居指该节点出发最多 $K$-hop 以内的所有节点和边。也即是一个常见的 $K$ 层GNN能够搜集信息的范围，对应节点的表示向量 $h_v^{(K)}$ 则取决于它的 $K$-hop 邻居。Context graph 表示一些节点 $v$ 的邻居结构。它由两个参数 $r_1, r_2$ 控制。对于节点 $v$，表示由所有与 $v$ 距离 $r_1$-hop 和 $r_2$-hop 之间的节点和边所构成的子图，可近似看做一个环形区域。令 $r_1 &amp;lt; K$，并将 $K$-hop 邻居和Context graph的交集被称为Context anchor nodes。这一任务如上图(a)所示，第一步先使用一个辅助GNN&amp;rsquo;来得到Context graph中的节点向量表示，并对Context anchor nodes的表示求平均，得到绿色的向量，对于图 $G$ 中的节点 $v$ ，这样得到的向量为 $c_v^G$。第二步，用主GNN在 $K$-hop 邻居组成的子图上得到 $v$ 的表示 $h_v^{(K)}$。预训练的目标即为：
 $$
-\sigma(h_v^{(K)}\cdot c_{v&amp;rsquo;}^G) \approx 1 \;\;\text{if $v$ and $v&#39;$ are same node}
+\sigma(h_v^{(K)}\cdot c_{v&#39;}^G) \approx 1 \;\;\text{if $v$ and $v&#39;$ are same node}
 $$
 $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用negative sampling，控制 $v&#39;=v$ 或 $G&#39;=G$，让正负样本比例为1。这实际上是要学到图的拓扑结构。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Attribute masking.&lt;/strong&gt; 随机mask掉分子图中的一些节点和边的属性，使用GNN预测。这个任务原理没有这么复杂，不再赘述。&lt;/p&gt;
@@ -762,7 +908,7 @@ $\sigma(\cdot)$ 表示$\text{Sigmoid}$函数。第三部，在训练中使用neg
             <title type="text">功能测试</title>
             <link rel="alternate" type="text/html" href="https://minys233.github.io/posts/test-my-site/" />
             <id>https://minys233.github.io/posts/test-my-site/</id>
-            <updated>2020-09-12T23:48:23&#43;08:00</updated>
+            <updated>2020-09-14T00:14:49&#43;08:00</updated>
             <published>2020-05-19T18:49:55&#43;00:00</published>
             <author>
                     <name>Minys</name>
@@ -825,7 +971,7 @@ graph LR;
 
 &lt;/div&gt;&lt;span class=&#34;caption&#34;&gt;👉 This is a flowchart&lt;/span&gt;
 &lt;p&gt;通过shortcode的设置, 当允许图表图例时, 可以通过接收caption参数为mermaid图表加上图例. 但注意要在前后加上空行, 不然这一段就和图表处在同一段了!&lt;/p&gt;
-&lt;p&gt;$*\mathbf{A} \in \mathbb{R}^{B\times N \times N}*$&lt;/p&gt;
+&lt;p&gt;$&lt;em&gt;\mathbf{A} \in \mathbb{R}^{B\times N \times N}&lt;/em&gt;$&lt;/p&gt;
 </content>
             
             
